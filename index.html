@@ -3,374 +3,128 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesaka MTB Enduro — Junio 2025</title>
+<title>Lesaka MTB Enduro — Junio 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --green: #2D6A4F;
-    --green-light: #52B788;
-    --green-pale: #D8F3DC;
-    --amber: #E76F00;
-    --amber-pale: #FFF0DC;
-    --red-badge: #C1121F;
-    --red-pale: #FFE5E7;
-    --blue: #1B4F72;
-    --blue-pale: #D6EAF8;
-    --gray-900: #1A1A1A;
-    --gray-700: #3D3D3D;
-    --gray-400: #888;
-    --gray-100: #F5F5F2;
-    --gray-50: #FAFAF8;
-    --border: #E0DDD6;
-    --white: #FFFFFF;
-  }
+:root{--green:#2D6A4F;--green-light:#52B788;--green-pale:#D8F3DC;--amber:#E76F00;--amber-pale:#FFF0DC;--red:#C1121F;--red-pale:#FFE5E7;--blue:#1B4F72;--blue-pale:#D6EAF8;--g900:#1A1A1A;--g700:#3D3D3D;--g400:#888;--g50:#FAFAF8;--border:#E0DDD6;--white:#FFFFFF;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--g50);color:var(--g900);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;}
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+.hero{background:var(--g900);color:var(--white);padding:3rem 2rem 2.5rem;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 30px,rgba(255,255,255,.015) 30px,rgba(255,255,255,.015) 31px);}
+.hi{max-width:800px;margin:0 auto;position:relative;}
+.hlabel{font-size:11px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--green-light);margin-bottom:12px;}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,5.5rem);line-height:.9;letter-spacing:.02em;margin-bottom:1rem;}
+.hero h1 span{color:var(--green-light);}
+.hmeta{display:flex;flex-wrap:wrap;gap:20px;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.1);}
+.hmeta-item{font-size:13px;color:rgba(255,255,255,.6);}
+.hmeta-item strong{color:var(--white);font-weight:500;display:block;}
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--gray-50);
-    color: var(--gray-900);
-    font-size: 15px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
+.container{max-width:800px;margin:0 auto;padding:2rem 1.5rem 4rem;}
 
-  /* HERO */
-  .hero {
-    background: var(--gray-900);
-    color: var(--white);
-    padding: 3rem 2rem 2.5rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 30px,
-      rgba(255,255,255,0.015) 30px,
-      rgba(255,255,255,0.015) 31px
-    );
-  }
-  .hero-inner { max-width: 780px; margin: 0 auto; position: relative; }
-  .hero-label {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--green-light);
-    margin-bottom: 12px;
-  }
-  .hero h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(3rem, 8vw, 5.5rem);
-    line-height: 0.9;
-    letter-spacing: 0.02em;
-    margin-bottom: 1rem;
-  }
-  .hero h1 span { color: var(--green-light); }
-  .hero-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
-  }
-  .hero-meta-item { font-size: 13px; color: rgba(255,255,255,0.6); }
-  .hero-meta-item strong { color: var(--white); font-weight: 500; display: block; }
+.tabs{display:flex;gap:8px;margin-bottom:2rem;flex-wrap:wrap;}
+.tab{font-size:13px;font-weight:500;padding:8px 18px;border-radius:100px;border:1.5px solid var(--border);background:var(--white);color:var(--g400);cursor:pointer;transition:all .15s;}
+.tab.active{background:var(--g900);color:var(--white);border-color:var(--g900);}
+.tab:hover:not(.active){border-color:var(--g900);color:var(--g900);}
+.plan{display:none;}.plan.active{display:block;}
 
-  /* MAIN LAYOUT */
-  .container { max-width: 780px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+.day{margin-bottom:2.5rem;}
+.dlabel{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--g400);margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.dlabel span{color:var(--g900);font-size:14px;font-weight:500;letter-spacing:0;text-transform:none;display:block;margin-top:2px;}
 
-  /* TABS */
-  .tabs { display: flex; gap: 8px; margin-bottom: 2rem; }
-  .tab {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    padding: 8px 18px;
-    border-radius: 100px;
-    border: 1.5px solid var(--border);
-    background: var(--white);
-    color: var(--gray-400);
-    cursor: pointer;
-    transition: all 0.15s;
-    letter-spacing: 0.01em;
-  }
-  .tab.active {
-    background: var(--gray-900);
-    color: var(--white);
-    border-color: var(--gray-900);
-  }
-  .tab:hover:not(.active) { border-color: var(--gray-900); color: var(--gray-900); }
+.card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:14px;}
+.card-head{padding:1rem 1.25rem .75rem;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;justify-content:space-between;gap:12px;}
+.ctitle{font-size:16px;font-weight:500;}
+.csub{font-size:12px;color:var(--g400);margin-top:2px;}
+.badge{font-size:10px;font-weight:600;padding:3px 9px;border-radius:100px;white-space:nowrap;flex-shrink:0;letter-spacing:.04em;}
+.b-black{background:var(--g900);color:var(--white);}
+.b-red{background:var(--red-pale);color:var(--red);}
 
-  .plan { display: none; }
-  .plan.active { display: block; }
+.stats{display:flex;border-bottom:1px solid var(--border);}
+.stat{flex:1;padding:.65rem .75rem;border-right:1px solid var(--border);text-align:center;}
+.stat:last-child{border-right:none;}
+.sval{font-size:15px;font-weight:500;line-height:1.2;}
+.slabel{font-size:10px;color:var(--g400);text-transform:uppercase;letter-spacing:.08em;margin-top:1px;}
 
-  /* DAY */
-  .day { margin-bottom: 2.5rem; }
-  .day-label {
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--gray-400);
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--border);
-  }
-  .day-label span {
-    color: var(--gray-900);
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0;
-    text-transform: none;
-    display: block;
-    margin-top: 2px;
-  }
+.cbody{padding:1rem 1.25rem;}
+.desc{font-size:13.5px;color:var(--g700);line-height:1.65;margin-bottom:1rem;}
 
-  /* ROUTE CARD */
-  .route-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-    margin-bottom: 12px;
-  }
-  .route-card-header {
-    padding: 1rem 1.25rem 0.75rem;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 12px;
-  }
-  .route-title { font-size: 16px; font-weight: 500; }
-  .route-subtitle { font-size: 12px; color: var(--gray-400); margin-top: 2px; }
-  .route-badge {
-    font-size: 10px;
-    font-weight: 600;
-    padding: 3px 9px;
-    border-radius: 100px;
-    white-space: nowrap;
-    flex-shrink: 0;
-    letter-spacing: 0.04em;
-  }
-  .badge-black { background: var(--gray-900); color: var(--white); }
-  .badge-red { background: var(--red-pale); color: var(--red-badge); }
-  .badge-blue { background: var(--blue-pale); color: var(--blue); }
+.gpx-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;}
+.gpx-a{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:500;color:var(--green);text-decoration:none;background:var(--green-pale);padding:5px 12px;border-radius:100px;}
+.gpx-a:hover{opacity:.75;}
+.gpx-a svg,.dl-svg{width:12px;height:12px;flex-shrink:0;}
 
-  /* STATS ROW */
-  .stats-row {
-    display: flex;
-    gap: 0;
-    border-bottom: 1px solid var(--border);
-  }
-  .stat {
-    flex: 1;
-    padding: 0.65rem 1rem;
-    border-right: 1px solid var(--border);
-    text-align: center;
-  }
-  .stat:last-child { border-right: none; }
-  .stat-val { font-size: 17px; font-weight: 500; line-height: 1.2; }
-  .stat-label { font-size: 10px; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 1px; }
+.map-wrap{border-radius:10px;overflow:hidden;margin-bottom:14px;border:1px solid var(--border);height:260px;}
+.map-wrap iframe{width:100%;height:100%;border:none;display:block;}
 
-  /* ROUTE BODY */
-  .route-body { padding: 1rem 1.25rem; }
-  .route-desc { font-size: 13.5px; color: var(--gray-700); line-height: 1.65; margin-bottom: 1rem; }
+.dlabel2{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--g400);margin-bottom:8px;}
+.dlist{display:flex;flex-direction:column;gap:8px;}
+.ditem{border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.dhead{display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--g50);border-bottom:1px solid var(--border);cursor:pointer;user-select:none;}
+.dname{font-size:13px;font-weight:500;flex:1;}
+.dstats{display:flex;gap:5px;align-items:center;flex-wrap:wrap;}
+.ds{font-size:11px;font-weight:500;background:var(--white);border:1px solid var(--border);padding:2px 7px;border-radius:100px;color:var(--g700);}
+.dd{font-size:9px;font-weight:700;padding:2px 7px;border-radius:100px;letter-spacing:.05em;}
+.dd-r{background:var(--red-pale);color:var(--red);}
+.dd-n{background:var(--g900);color:var(--white);}
+.dd-b{background:var(--blue-pale);color:var(--blue);}
+.dtog{font-size:14px;color:var(--g400);transition:transform .2s;line-height:1;}
+.dtog.open{transform:rotate(180deg);}
+.dbody{padding:10px 12px;font-size:13px;color:var(--g700);line-height:1.6;display:none;}
+.dbody.open{display:block;}
 
-  /* GPX LINK */
-  .gpx-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--green);
-    text-decoration: none;
-    background: var(--green-pale);
-    padding: 5px 12px;
-    border-radius: 100px;
-    transition: opacity 0.15s;
-    margin-right: 6px;
-    margin-bottom: 6px;
-  }
-  .gpx-link:hover { opacity: 0.75; }
-  .gpx-link svg { width: 13px; height: 13px; flex-shrink: 0; }
+.yt-a{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:500;color:#CC0000;text-decoration:none;background:#FFF0F0;padding:4px 10px;border-radius:100px;margin-top:8px;margin-right:5px;}
+.yt-a:hover{opacity:.8;}
+.yt-a svg{width:12px;height:12px;}
+.gpx-sm{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:500;color:var(--green);text-decoration:none;background:var(--green-pale);padding:3px 9px;border-radius:100px;margin-top:8px;margin-right:5px;}
 
-  /* DESCENTS */
-  .descents-label {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--gray-400);
-    margin-bottom: 8px;
-  }
-  .descent-list { display: flex; flex-direction: column; gap: 8px; }
-  .descent-item {
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  .descent-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 8px 12px;
-    background: var(--gray-50);
-    border-bottom: 1px solid var(--border);
-    cursor: pointer;
-    user-select: none;
-  }
-  .descent-name { font-size: 13px; font-weight: 500; flex: 1; }
-  .descent-stats { display: flex; gap: 10px; align-items: center; }
-  .descent-stat {
-    font-size: 11px;
-    font-weight: 500;
-    background: var(--white);
-    border: 1px solid var(--border);
-    padding: 2px 7px;
-    border-radius: 100px;
-    color: var(--gray-700);
-  }
-  .descent-diff {
-    font-size: 9px;
-    font-weight: 700;
-    padding: 2px 7px;
-    border-radius: 100px;
-    letter-spacing: 0.05em;
-  }
-  .diff-roja { background: var(--red-pale); color: var(--red-badge); }
-  .diff-negra { background: var(--gray-900); color: var(--white); }
-  .diff-azul { background: var(--blue-pale); color: var(--blue); }
-  .descent-toggle {
-    font-size: 16px;
-    color: var(--gray-400);
-    transition: transform 0.2s;
-    line-height: 1;
-  }
-  .descent-toggle.open { transform: rotate(180deg); }
-  .descent-body {
-    padding: 10px 12px;
-    font-size: 12.5px;
-    color: var(--gray-700);
-    line-height: 1.6;
-    display: none;
-  }
-  .descent-body.open { display: block; }
-  .descent-gpx {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 11px;
-    font-weight: 500;
-    color: var(--green);
-    text-decoration: none;
-    background: var(--green-pale);
-    padding: 3px 9px;
-    border-radius: 100px;
-    margin-top: 8px;
-  }
+.pm-div{text-align:center;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--g400);margin:14px 0;position:relative;}
+.pm-div::before,.pm-div::after{content:'';position:absolute;top:50%;width:calc(50% - 60px);height:1px;background:var(--border);}
+.pm-div::before{left:0;}.pm-div::after{right:0;}
 
-  /* DIVIDER */
-  .pm-divider {
-    text-align: center;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--gray-400);
-    margin: 14px 0;
-    position: relative;
-  }
-  .pm-divider::before, .pm-divider::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: calc(50% - 40px);
-    height: 1px;
-    background: var(--border);
-  }
-  .pm-divider::before { left: 0; }
-  .pm-divider::after { right: 0; }
+.ibox{border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:12px 16px;font-size:13px;color:var(--g700);line-height:1.6;margin-top:1.5rem;background:var(--amber-pale);}
+.ibox strong{color:var(--g900);}
 
-  /* INFO BOX */
-  .info-box {
-    background: var(--amber-pale);
-    border-left: 3px solid var(--amber);
-    border-radius: 0 8px 8px 0;
-    padding: 12px 16px;
-    font-size: 13px;
-    color: var(--gray-700);
-    line-height: 1.6;
-    margin-top: 1.5rem;
-  }
-  .info-box strong { color: var(--gray-900); }
+.poli{margin-top:2.5rem;padding-top:1.5rem;border-top:2px solid var(--border);}
+.poli h3{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.04em;color:var(--g900);margin-bottom:4px;}
+.poli-sub{font-size:13px;color:var(--g400);margin-bottom:1.25rem;}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin-bottom:12px;}
+.pcard{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:12px 14px;}
+.pcard-t{font-size:11px;font-weight:600;color:var(--g400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+.pcard .price{font-size:20px;font-weight:500;color:var(--g900);}
+.pcard .pnote{font-size:11px;color:var(--g400);margin-top:2px;}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0;}
+.titem{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:8px 10px;font-size:12px;color:var(--g700);text-align:center;}
+.sello{background:var(--green-pale);border:1px solid #A8D5B5;border-radius:10px;padding:12px 16px;font-size:13px;color:var(--g700);line-height:1.6;}
+.sello strong{color:var(--green);}
+.sello a{color:var(--green);}
 
-  /* SERVICES */
-  .services {
-    margin-top: 2.5rem;
-    padding-top: 1.5rem;
-    border-top: 2px solid var(--border);
-  }
-  .services h3 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.6rem;
-    letter-spacing: 0.04em;
-    color: var(--gray-900);
-    margin-bottom: 1rem;
-  }
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
-  }
-  .service-item {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 10px 14px;
-    font-size: 12px;
-    color: var(--gray-700);
-  }
-  .service-item strong { display: block; font-size: 13px; color: var(--gray-900); margin-bottom: 2px; }
+footer{text-align:center;font-size:11px;color:var(--g400);padding:1.5rem;border-top:1px solid var(--border);margin-top:2rem;}
+footer a{color:inherit;}
 
-  /* FOOTER */
-  footer {
-    text-align: center;
-    font-size: 11px;
-    color: var(--gray-400);
-    padding: 1.5rem;
-    border-top: 1px solid var(--border);
-  }
-
-  @media (max-width: 520px) {
-    .stats-row { flex-wrap: wrap; }
-    .stat { flex: 1 1 45%; border-bottom: 1px solid var(--border); }
-    .hero h1 { font-size: 3.2rem; }
-    .tabs { flex-direction: column; }
-    .tab { text-align: center; border-radius: 8px; }
-  }
+@media(max-width:540px){
+  .stats{flex-wrap:wrap;}
+  .stat{flex:1 1 45%;border-bottom:1px solid var(--border);}
+  .hero h1{font-size:3.2rem;}
+  .tabs{flex-direction:column;}
+  .tab{text-align:center;border-radius:8px;}
+  .tgrid{grid-template-columns:repeat(2,1fr);}
+  .pgrid{grid-template-columns:1fr;}
+}
 </style>
 </head>
 <body>
 
 <div class="hero">
-  <div class="hero-inner">
-    <p class="hero-label">📍 Bizibide · Lesaka, Navarra</p>
+  <div class="hi">
+    <p class="hlabel">📍 Bizibide · Lesaka, Navarra</p>
     <h1>MTB<br>ENDURO<br><span>LESAKA</span></h1>
-    <div class="hero-meta">
-      <div class="hero-meta-item"><strong>Fin de semana</strong>Finales de junio</div>
-      <div class="hero-meta-item"><strong>Grupo</strong>5 riders (4 ebike + 1 muscular)</div>
-      <div class="hero-meta-item"><strong>Nivel</strong>Intermedio / Avanzado</div>
-      <div class="hero-meta-item"><strong>Techo técnico</strong>Askati (roja-negra)</div>
+    <div class="hmeta">
+      <div class="hmeta-item"><strong>Fin de semana</strong>Finales de junio 2026</div>
+      <div class="hmeta-item"><strong>Grupo</strong>5 riders (4 ebike + 1 muscular)</div>
+      <div class="hmeta-item"><strong>Nivel</strong>Intermedio / Avanzado</div>
+      <div class="hmeta-item"><strong>Techo técnico</strong>Askati (negra)</div>
+      <div class="hmeta-item"><strong>Dinámica</strong>Grupo unido en todo momento</div>
     </div>
   </div>
 </div>
@@ -378,78 +132,82 @@
 <div class="container">
 
   <div class="tabs">
-    <button class="tab active" onclick="showPlan('a', this)">Propuesta A — Progresiva</button>
-    <button class="tab" onclick="showPlan('b', this)">Propuesta B — Repeticiones</button>
+    <button class="tab active" onclick="showPlan('a',this)">Propuesta A — Progresiva</button>
+    <button class="tab" onclick="showPlan('b',this)">Propuesta B — Máximo volumen</button>
   </div>
 
-  <!-- ===================== PLAN A ===================== -->
+  <!-- ===== PLAN A ===== -->
   <div id="plan-a" class="plan active">
 
-    <!-- VIERNES -->
     <div class="day">
-      <div class="day-label">Viernes<span>Llegada y calentamiento</span></div>
-
-      <div class="route-card">
-        <div class="route-card-header">
-          <div>
-            <div class="route-title">Ruta Enduro Base</div>
-            <div class="route-subtitle">Ruta oficial Bizibide · Salida desde polideportivo</div>
-          </div>
-          <span class="route-badge badge-black">⬛ NEGRA</span>
+      <div class="dlabel">Viernes<span>Llegada y calentamiento — min. 800 m desnivel</span></div>
+      <div class="card">
+        <div class="card-head">
+          <div><div class="ctitle">Ruta Enduro Base + Askati</div><div class="csub">Ruta oficial ampliada · Salida desde polideportivo · Todo el grupo junto</div></div>
+          <span class="badge b-black">⬛ NEGRA</span>
         </div>
-        <div class="stats-row">
-          <div class="stat"><div class="stat-val">23,5 km</div><div class="stat-label">Distancia</div></div>
-          <div class="stat"><div class="stat-val">↑ 882 m</div><div class="stat-label">Desnivel +</div></div>
-          <div class="stat"><div class="stat-val">~3,5 h</div><div class="stat-label">Duración est.</div></div>
-          <div class="stat"><div class="stat-val">2</div><div class="stat-label">Bajadas</div></div>
+        <div class="stats">
+          <div class="stat"><div class="sval">~27 km</div><div class="slabel">Distancia</div></div>
+          <div class="stat"><div class="sval">↑ ~1.000 m</div><div class="slabel">Desnivel +</div></div>
+          <div class="stat"><div class="sval">↓ ~1.000 m</div><div class="slabel">Desnivel −</div></div>
+          <div class="stat"><div class="sval">~4 h</div><div class="slabel">Duración</div></div>
         </div>
-        <div class="route-body">
-          <p class="route-desc">La ruta oficial más corta de Bizibide. Sube desde la regata de Urraba pasando por la fuente de Ikatzulo hasta el alto de Agiña. Desde allí encadena las dos bajadas señalizadas más fluidas del parque. Perfecta para conocer el terreno el primer día sin llegar reventados a cenar. Termina por la Vía Verde del Bidasoa de vuelta al polideportivo.</p>
-          <div style="margin-bottom: 12px;">
-            <a class="gpx-link" href="https://www.bizibide.eus/es/ibilbideak/enduro/" target="_blank">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-              GPX Ruta Enduro Base · bizibide.eus
+        <div class="cbody">
+          <p class="desc">La ruta enduro base oficial (23,5 km, 882 m↑) ampliada añadiendo Askati en el descenso desde Agiña, lo que sube el desnivel por encima de los 1.000 m. Sube por la regata de Urraba hasta el alto de Agiña, desvío a Askati como bajada estrella, y regresa por Zalain Zoko y la Vía Verde. Perfecto para conocer las dos bajadas clave antes del sábado grande.</p>
+          <div class="gpx-row">
+            <a class="gpx-a" href="https://www.bizibide.eus/es/ibilbideak/enduro/" target="_blank">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>GPX Enduro Base
+            </a>
+            <a class="gpx-a" href="https://www.bizibide.eus/es/ibilbideak/askati/" target="_blank">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>GPX Askati
+            </a>
+            <a class="gpx-a" href="https://www.bizibide.eus/es/ibilbideak/zalainzoko/" target="_blank">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>GPX Zalain Zoko
             </a>
           </div>
-          <div class="descents-label">Bajadas incluidas</div>
-          <div class="descent-list">
 
-            <div class="descent-item">
-              <div class="descent-header" onclick="toggleDescent(this)">
-                <div class="descent-name">Zalain Zoko ↓</div>
-                <div class="descent-stats">
-                  <span class="descent-stat">1,6 km</span>
-                  <span class="descent-stat">↓ 268 m</span>
-                  <span class="descent-diff diff-roja">ROJA</span>
-                </div>
-                <span class="descent-toggle">▾</span>
+          <div class="map-wrap">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d23269.0!2d-1.7600!3d43.2538!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd51a2ef0e3a4d8b%3A0xa9e30d1b8f0e4060!2sLesaka%2C%20Navarra!5e1!3m2!1ses!2ses!4v1700000000" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+
+          <div class="dlabel2">Bajadas incluidas</div>
+          <div class="dlist">
+
+            <div class="ditem">
+              <div class="dhead" onclick="tog(this)">
+                <div class="dname">Askati ↓</div>
+                <div class="dstats"><span class="ds">1,6 km</span><span class="ds">↓ 347 m</span><span class="ds">~22% pend.</span><span class="dd dd-n">NEGRA</span></div>
+                <span class="dtog">▾</span>
               </div>
-              <div class="descent-body">
-                Bajada media con mucho flow, la más disfrutona y rítmica del parque. Desciende desde el collado hasta el barrio de Zalain Zoko bordeando el Bidasoa por preciosos senderos con curvas abiertas y secciones rápidas. Berms naturales y saltos evitables. La bajada que más queréis repetir según todos los riders que visitan Lesaka. Sí está señalizada.
+              <div class="dbody">
+                La bajada más nueva de Bizibide, creada con subvención de Orbea. <strong>Sin señalizar — GPX obligatorio.</strong> Arranca en una cresta inclinada con vistas espectaculares de Lesaka y el valle. Le sigue un tramo arbolado con saltos todos evitables. La sección más exigente está cerca de la regata: varias trialeras que ponen a prueba las habilidades técnicas. En días con barro la dificultad sube notablemente. El tramo final se abre y gana flow. Tiempo rodando: ~10 minutos.
                 <br><br>
-                <a class="descent-gpx" href="https://www.bizibide.eus/es/ibilbideak/zalainzoko/" target="_blank">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-                  GPX Zalain Zoko · bizibide.eus
+                <a class="gpx-sm" href="https://www.bizibide.eus/es/ibilbideak/askati/" target="_blank">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>GPX Askati
+                </a>
+                <a class="yt-a" href="https://www.youtube.com/watch?v=LR6khSVh3h4" target="_blank">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 8l6 4-6 4V8z"/><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>▶ Ver Askati en YouTube (RAW Bizibide)
+                </a>
+                <a class="yt-a" href="https://www.youtube.com/watch?v=4loAx5tGLqg" target="_blank">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 8l6 4-6 4V8z"/><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>▶ Bizibide BTT completo
                 </a>
               </div>
             </div>
 
-            <div class="descent-item">
-              <div class="descent-header" onclick="toggleDescent(this)">
-                <div class="descent-name">Irasmendi ↓</div>
-                <div class="descent-stats">
-                  <span class="descent-stat">1,3 km</span>
-                  <span class="descent-stat">↓ 253 m</span>
-                  <span class="descent-diff diff-azul">AZUL</span>
-                </div>
-                <span class="descent-toggle">▾</span>
+            <div class="ditem">
+              <div class="dhead" onclick="tog(this)">
+                <div class="dname">Zalain Zoko ↓</div>
+                <div class="dstats"><span class="ds">1,6 km</span><span class="ds">↓ 268 m</span><span class="dd dd-r">ROJA</span></div>
+                <span class="dtog">▾</span>
               </div>
-              <div class="descent-body">
-                Bajada fácil y muy disfrutona desde el collado de Agiña. Sendero bien trazado entre bosque, sin dificultades técnicas relevantes. Curvas suaves y ritmo constante. Perfecta para abrir piernas el primer día y para que todo el grupo baje junto sin esperas. Señalizada.
+              <div class="dbody">
+                La bajada más disfrutona y rítmica del parque. Descenso desde el collado hasta el barrio de Zalain Zoko bordeando el Bidasoa por sendero con curvas abiertas, berms naturales y secciones rápidas. Señalizada. La favorita de todos los riders que visitan Lesaka — perfecto para el viernes: exige concentración pero no sorprende negativamente.
                 <br><br>
-                <a class="descent-gpx" href="https://www.bizibide.eus/es/ibilbideak/irasmendi/" target="_blank">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-                  GPX Irasmendi · bizibide.eus
+                <a class="gpx-sm" href="https://www.bizibide.eus/es/ibilbideak/zalainzoko/" target="_blank">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>GPX Zalain Zoko
+                </a>
+                <a class="yt-a" href="https://www.youtube.com/watch?v=xfPl6xOGxHA" target="_blank">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 8l6 4-6 4V8z"/><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>▶ Bajadas Lesaka 2023
                 </a>
               </div>
             </div>
@@ -459,248 +217,148 @@
       </div>
     </div>
 
-    <!-- SABADO A -->
     <div class="day">
-      <div class="day-label">Sábado<span>Jornada grande — dos sesiones</span></div>
+      <div class="dlabel">Sábado<span>Jornada grande — mañana y tarde</span></div>
 
-      <div class="route-card">
-        <div class="route-card-header">
-          <div>
-            <div class="route-title">Mañana: Ikatzbidea + Askati</div>
-            <div class="route-subtitle">Ruta larga con desvío a la bajada técnica · Comida en Lesaka</div>
-          </div>
-          <span class="route-badge badge-red">🟠 ROJA</span>
+      <div class="card">
+        <div class="card-head">
+          <div><div class="ctitle">Mañana: Ikatzbidea</div><div class="csub">Ruta XC oficial · 30 km · Subida hasta Pagoieta · Comida en Lesaka al terminar</div></div>
+          <span class="badge b-red">🟠 ROJA</span>
         </div>
-        <div class="stats-row">
-          <div class="stat"><div class="stat-val">~32 km</div><div class="stat-label">Distancia</div></div>
-          <div class="stat"><div class="stat-val">↑ ~1.200 m</div><div class="stat-label">Desnivel +</div></div>
-          <div class="stat"><div class="stat-val">~4-5 h</div><div class="stat-label">Duración est.</div></div>
-          <div class="stat"><div class="stat-val">3</div><div class="stat-label">Bajadas</div></div>
+        <div class="stats">
+          <div class="stat"><div class="sval">30 km</div><div class="slabel">Distancia</div></div>
+          <div class="stat"><div class="sval">↑ 1.058 m</div><div class="slabel">Desnivel +</div></div>
+          <div class="stat"><div class="sval">↓ 1.058 m</div><div class="slabel">Desnivel −</div></div>
+          <div class="stat"><div class="sval">~4-5 h</div><div class="slabel">Duración</div></div>
         </div>
-        <div class="route-body">
-          <p class="route-desc">La ruta XC Ikatzbidea como columna vertebral (30 km, 1.058 m). Desde Lesaka sube por Matxitenea y la regata de Urraba hasta el alto de Pagoieta en el límite con Artikutza. En el descenso se desvía para coger Askati, la bajada más técnica del fin de semana. Termina en Lesaka para comer. Las subidas son exigentes — en los montes de Lesaka no hay descanso.</p>
-          <div style="margin-bottom: 12px;">
-            <a class="gpx-link" href="https://www.bizibide.eus/es/ibilbideak/ikatz-bidea/" target="_blank">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-              GPX Ikatzbidea · bizibide.eus
-            </a>
-            <a class="gpx-link" href="https://www.bizibide.eus/es/ibilbideak/askati/" target="_blank">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-              GPX Askati · bizibide.eus
+        <div class="cbody">
+          <p class="desc">Segunda ruta XC oficial, trazado diferente a la base. Sube desde Lesaka por Matxitenea hasta el alto de Pagoieta en el límite con el Señorío de Artikutza. Bajada por Irasmendi y cierre con Mil Kurbas de vuelta al pueblo. Subidas constantes y exigentes — en Lesaka no hay kilómetros de regalo.</p>
+          <div class="gpx-row">
+            <a class="gpx-a" href="https://www.bizibide.eus/es/ibilbideak/ikatz-bidea/" target="_blank">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>GPX Ikatzbidea · bizibide.eus
             </a>
           </div>
-          <div class="descents-label">Bajadas de la mañana</div>
-          <div class="descent-list">
-
-            <div class="descent-item">
-              <div class="descent-header" onclick="toggleDescent(this)">
-                <div class="descent-name">Askati ↓</div>
-                <div class="descent-stats">
-                  <span class="descent-stat">1,6 km</span>
-                  <span class="descent-stat">↓ 347 m</span>
-                  <span class="descent-diff diff-roja">ROJA–NEGRA</span>
-                </div>
-                <span class="descent-toggle">▾</span>
+          <div class="dlabel2">Bajadas de la mañana</div>
+          <div class="dlist">
+            <div class="ditem">
+              <div class="dhead" onclick="tog(this)">
+                <div class="dname">Irasmendi ↓</div>
+                <div class="dstats"><span class="ds">1,3 km</span><span class="ds">↓ 253 m</span><span class="dd dd-b">AZUL</span></div>
+                <span class="dtog">▾</span>
               </div>
-              <div class="descent-body">
-                La bajada más técnica del fin de semana y el techo del grupo. Creada con subvención de Orbea, sin señalizar — imprescindible GPX. Empieza en una cresta inclinada con vistas espectaculares de Lesaka. Le sigue un tramo arbolado con saltos evitables. La sección más exigente aparece cerca de la regata: varias trialeras que ponen a prueba las habilidades. La dificultad aumenta con barro. Termina con una zona fluida con mucho ritmo. Llevar casco y protecciones recomendadas.
-                <br><br>
-                <a class="descent-gpx" href="https://www.bizibide.eus/es/ibilbideak/askati/" target="_blank">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-                  GPX Askati · bizibide.eus
-                </a>
+              <div class="dbody">Bajada fácil y fluida desde el collado de Agiña. Sendero limpio entre bosque, curvas suaves, ritmo constante, sin dificultades técnicas. Señalizada. Perfecta para bajar juntos sin esperas.
+                <br><br><a class="gpx-sm" href="https://www.bizibide.eus/es/ibilbideak/irasmendi/" target="_blank"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>GPX Irasmendi</a>
               </div>
             </div>
-
-            <div class="descent-item">
-              <div class="descent-header" onclick="toggleDescent(this)">
-                <div class="descent-name">Irasmendi ↓</div>
-                <div class="descent-stats">
-                  <span class="descent-stat">1,3 km</span>
-                  <span class="descent-stat">↓ 253 m</span>
-                  <span class="descent-diff diff-azul">AZUL</span>
-                </div>
-                <span class="descent-toggle">▾</span>
+            <div class="ditem">
+              <div class="dhead" onclick="tog(this)">
+                <div class="dname">Mil Kurbas ↓</div>
+                <div class="dstats"><span class="ds">~1,5 km</span><span class="ds">↓ ~200 m</span><span class="dd dd-b">AZUL</span></div>
+                <span class="dtog">▾</span>
               </div>
-              <div class="descent-body">
-                Bajada de enlace entre Pagoieta y la parte baja de la ruta. Fácil, fluida, sin dificultades. Buen descanso activo después de Askati antes de la subida final a Berrotaran.
-                <br><br>
-                <a class="descent-gpx" href="https://www.bizibide.eus/es/ibilbideak/irasmendi/" target="_blank">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-                  GPX Irasmendi · bizibide.eus
-                </a>
-              </div>
+              <div class="dbody">Cierre de Ikatzbidea de vuelta al pueblo desde Berrotaran. Curvas encadenadas en sendero, sin obstáculos técnicos. Muy disfrutable para todos los niveles. Llegas rodando hasta el restaurante para comer.</div>
             </div>
-
-            <div class="descent-item">
-              <div class="descent-header" onclick="toggleDescent(this)">
-                <div class="descent-name">Mil Kurbas ↓</div>
-                <div class="descent-stats">
-                  <span class="descent-stat">~1,5 km</span>
-                  <span class="descent-stat">↓ ~200 m</span>
-                  <span class="descent-diff diff-azul">AZUL</span>
-                </div>
-                <span class="descent-toggle">▾</span>
-              </div>
-              <div class="descent-body">
-                Bajada de cierre de la ruta Ikatzbidea, desde Berrotaran de vuelta al punto de inicio. Como su nombre indica, mil curvas encadenadas en sendero que baja hasta Lesaka. Muy técnica en longitud de curvas pero sin obstáculos puntuales difíciles. Perfecta para terminar la mañana y llegar al pueblo a comer.
-              </div>
-            </div>
-
           </div>
         </div>
       </div>
 
-      <div class="pm-divider">Pausa para comer en Lesaka</div>
+      <div class="pm-div">🍽 Pausa para comer en Lesaka</div>
 
-      <div class="route-card">
-        <div class="route-card-header">
-          <div>
-            <div class="route-title">Tarde: Pipiflow + Zalain Zoko</div>
-            <div class="route-subtitle">Sesión corta de bajadas puras · Flow total</div>
-          </div>
-          <span class="route-badge badge-red">🟠 ROJA</span>
+      <div class="card">
+        <div class="card-head">
+          <div><div class="ctitle">Tarde: Pipiflow + Zalain Zoko</div><div class="csub">Circular de tarde · Flow puro · Todo el grupo junto</div></div>
+          <span class="badge b-red">🟠 ROJA</span>
         </div>
-        <div class="stats-row">
-          <div class="stat"><div class="stat-val">~14 km</div><div class="stat-label">Distancia</div></div>
-          <div class="stat"><div class="stat-val">↑ ~550 m</div><div class="stat-label">Desnivel +</div></div>
-          <div class="stat"><div class="stat-val">~2 h</div><div class="stat-label">Duración est.</div></div>
-          <div class="stat"><div class="stat-val">2</div><div class="stat-label">Bajadas</div></div>
+        <div class="stats">
+          <div class="stat"><div class="sval">~14 km</div><div class="slabel">Distancia</div></div>
+          <div class="stat"><div class="sval">↑ ~550 m</div><div class="slabel">Desnivel +</div></div>
+          <div class="stat"><div class="sval">↓ ~550 m</div><div class="slabel">Desnivel −</div></div>
+          <div class="stat"><div class="sval">~2 h</div><div class="slabel">Duración</div></div>
         </div>
-        <div class="route-body">
-          <p class="route-desc">Después de comer, sesión corta centrada en las dos bajadas más rítmicas del parque. Los de ebike pueden repetir Pipiflow 2–3 veces mientras el resto hace la circular. Con las piernas ya sueltas del día, estas bajadas se disfrutan al máximo.</p>
-          <div style="margin-bottom: 12px;">
-            <a class="gpx-link" href="https://www.bizibide.eus/es/ibilbideak/pipiflow/" target="_blank">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-              GPX Pipiflow · bizibide.eus
+        <div class="cbody">
+          <p class="desc">Circular completa: subida desde Lesaka hasta el inicio de Pipiflow, bajada, enlace hasta Zalain Zoko y de vuelta al pueblo. El grupo hace el recorrido completo junto. Con las piernas ya sueltas del día estas dos bajadas fluidas se disfrutan al máximo.</p>
+          <div class="gpx-row">
+            <a class="gpx-a" href="https://www.bizibide.eus/es/ibilbideak/pipiflow/" target="_blank">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>GPX Pipiflow · bizibide.eus
             </a>
           </div>
-          <div class="descents-label">Bajadas de la tarde</div>
-          <div class="descent-list">
-
-            <div class="descent-item">
-              <div class="descent-header" onclick="toggleDescent(this)">
-                <div class="descent-name">Pipiflow ↓</div>
-                <div class="descent-stats">
-                  <span class="descent-stat">600 m</span>
-                  <span class="descent-stat">↓ 104 m</span>
-                  <span class="descent-diff diff-azul">AZUL</span>
-                </div>
-                <span class="descent-toggle">▾</span>
+          <div class="dlabel2">Bajadas de la tarde</div>
+          <div class="dlist">
+            <div class="ditem">
+              <div class="dhead" onclick="tog(this)">
+                <div class="dname">Pipiflow ↓</div>
+                <div class="dstats"><span class="ds">600 m</span><span class="ds">↓ 104 m</span><span class="ds">★ 4,3/5 TF</span><span class="dd dd-b">AZUL</span></div>
+                <span class="dtog">▾</span>
               </div>
-              <div class="descent-body">
-                La bajada más rápida y fluida de Bizibide. Singletrack azul muy valorado (4,3/5 en Trailforks), sendero con berms y saltos, puro ritmo. Tramo de conexión entre Askati y Mikeltxo en la zona Pipillu. La visibilidad del trazado puede ser algo difícil de seguir — llevar GPX. Duración media: 4 minutos rodando. Ideal para repetir varias veces seguidas.
+              <div class="dbody">La más rápida y fluida de Bizibide, la mejor valorada en Trailforks (4,3/5). Singletrack con berms y saltos en la zona Pipillu. Tramo oficial de la carrera Bizibide Enduro. La visibilidad del trazado puede ser difícil — llevar GPX. Duración media ~4 minutos. Puro ritmo de principio a fin.
                 <br><br>
-                <a class="descent-gpx" href="https://www.bizibide.eus/es/ibilbideak/pipiflow/" target="_blank">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-                  GPX Pipiflow · bizibide.eus
-                </a>
+                <a class="gpx-sm" href="https://www.bizibide.eus/es/ibilbideak/pipiflow/" target="_blank"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>GPX Pipiflow</a>
+                <a class="yt-a" href="https://www.youtube.com/watch?v=4loAx5tGLqg" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 8l6 4-6 4V8z"/><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>▶ Bizibide BTT (incluye Pipiflow)</a>
               </div>
             </div>
-
-            <div class="descent-item">
-              <div class="descent-header" onclick="toggleDescent(this)">
-                <div class="descent-name">Zalain Zoko ↓</div>
-                <div class="descent-stats">
-                  <span class="descent-stat">1,6 km</span>
-                  <span class="descent-stat">↓ 268 m</span>
-                  <span class="descent-diff diff-roja">ROJA</span>
-                </div>
-                <span class="descent-toggle">▾</span>
+            <div class="ditem">
+              <div class="dhead" onclick="tog(this)">
+                <div class="dname">Zalain Zoko ↓</div>
+                <div class="dstats"><span class="ds">1,6 km</span><span class="ds">↓ 268 m</span><span class="dd dd-r">ROJA</span></div>
+                <span class="dtog">▾</span>
               </div>
-              <div class="descent-body">
-                Segunda vez esta bajada — con las piernas ya rodadas del día sale mucho mejor. Berms, secciones rápidas y ritmo continuo desde el collado hasta el barrio. La mejor de Lesaka en relación calidad/esfuerzo de subida.
-              </div>
+              <div class="dbody">Segunda pasada del fin de semana. Con las piernas del día encima el trazado ya se conoce y se puede ir más a fondo en las curvas. La mejor bajada de Lesaka en relación calidad/esfuerzo de subida.</div>
             </div>
-
           </div>
         </div>
       </div>
     </div>
 
-    <!-- DOMINGO A -->
     <div class="day">
-      <div class="day-label">Domingo<span>Cierre y vuelta a Madrid</span></div>
-
-      <div class="route-card">
-        <div class="route-card-header">
-          <div>
-            <div class="route-title">Circuito Askati + Mikeltxo + Pipiflow</div>
-            <div class="route-subtitle">Las tres bajadas del circuito de competición · Salida a las 8:00</div>
-          </div>
-          <span class="route-badge badge-red">🟠 ROJA</span>
+      <div class="dlabel">Domingo<span>Cierre — salida 8:00 · Ruta hasta ~11:30 · Spa + comida hasta las 15:00 · Carretera Madrid</span></div>
+      <div class="card">
+        <div class="card-head">
+          <div><div class="ctitle">Circuito Askati + Mikeltxo + Pipiflow</div><div class="csub">Las tres bajadas del circuito de competición oficial</div></div>
+          <span class="badge b-red">🟠 ROJA</span>
         </div>
-        <div class="stats-row">
-          <div class="stat"><div class="stat-val">~18 km</div><div class="stat-label">Distancia</div></div>
-          <div class="stat"><div class="stat-val">↑ ~700 m</div><div class="stat-label">Desnivel +</div></div>
-          <div class="stat"><div class="stat-val">~2,5-3 h</div><div class="stat-label">Duración est.</div></div>
-          <div class="stat"><div class="stat-val">3</div><div class="stat-label">Bajadas</div></div>
+        <div class="stats">
+          <div class="stat"><div class="sval">~18 km</div><div class="slabel">Distancia</div></div>
+          <div class="stat"><div class="sval">↑ ~700 m</div><div class="slabel">Desnivel +</div></div>
+          <div class="stat"><div class="sval">↓ ~700 m</div><div class="slabel">Desnivel −</div></div>
+          <div class="stat"><div class="sval">~2,5 h</div><div class="slabel">Duración</div></div>
         </div>
-        <div class="route-body">
-          <p class="route-desc">Las tres bajadas que se usan en la carrera oficial Bizibide Enduro encadenadas en un circuito. Salir a las 8:00, terminar antes de las 11:00, ducha en el polideportivo y carretera a Madrid con margen de sobra.</p>
-          <div style="margin-bottom: 12px;">
-            <a class="gpx-link" href="https://www.bizibide.eus/es/ibilbideak/askati/" target="_blank">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-              GPX Askati · bizibide.eus
-            </a>
-            <a class="gpx-link" href="https://www.bizibide.eus/en/ibilbideak/mikeltxo-%E2%86%93/" target="_blank">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-              GPX Mikeltxo · bizibide.eus
-            </a>
+        <div class="cbody">
+          <p class="desc">Las tres bajadas del circuito de la carrera oficial Bizibide Enduro encadenadas. Salir 8:00 → terminar ~10:30 → ducha y zona termal polideportivo hasta las 12:30 → comida con Sello Bizibide → carretera a Madrid ≤15:00. Con las bajadas ya conocidas del viernes y sábado, el domingo es puro disfrute sin sorpresas.</p>
+          <div class="gpx-row">
+            <a class="gpx-a" href="https://www.bizibide.eus/es/ibilbideak/askati/" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>GPX Askati</a>
+            <a class="gpx-a" href="https://www.bizibide.eus/en/ibilbideak/mikeltxo-%E2%86%93/" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>GPX Mikeltxo</a>
+            <a class="gpx-a" href="https://www.bizibide.eus/es/ibilbideak/pipiflow/" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>GPX Pipiflow</a>
           </div>
-          <div class="descents-label">Bajadas</div>
-          <div class="descent-list">
-
-            <div class="descent-item">
-              <div class="descent-header" onclick="toggleDescent(this)">
-                <div class="descent-name">Askati ↓</div>
-                <div class="descent-stats">
-                  <span class="descent-stat">1,6 km</span>
-                  <span class="descent-stat">↓ 347 m</span>
-                  <span class="descent-diff diff-roja">ROJA–NEGRA</span>
-                </div>
-                <span class="descent-toggle">▾</span>
+          <div class="dlabel2">Bajadas</div>
+          <div class="dlist">
+            <div class="ditem">
+              <div class="dhead" onclick="tog(this)">
+                <div class="dname">Askati ↓</div>
+                <div class="dstats"><span class="ds">1,6 km</span><span class="ds">↓ 347 m</span><span class="dd dd-n">NEGRA</span></div>
+                <span class="dtog">▾</span>
               </div>
-              <div class="descent-body">
-                Segunda vez — con el terreno conocido del sábado sale notablemente mejor. Apertura del domingo con adrenalina. Sin señalizar, llevar GPX obligatorio.
+              <div class="dbody">Segunda pasada — con el terreno conocido del viernes sale mucho mejor. Apertura del domingo con adrenalina. Sin señalizar, GPX obligatorio.
+                <br><br><a class="yt-a" href="https://www.youtube.com/watch?v=LR6khSVh3h4" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 8l6 4-6 4V8z"/><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>▶ Ver Askati en YouTube</a>
               </div>
             </div>
-
-            <div class="descent-item">
-              <div class="descent-header" onclick="toggleDescent(this)">
-                <div class="descent-name">Mikeltxo ↓</div>
-                <div class="descent-stats">
-                  <span class="descent-stat">910 m</span>
-                  <span class="descent-stat">↓ 174 m</span>
-                  <span class="descent-diff diff-azul">AZUL</span>
-                </div>
-                <span class="descent-toggle">▾</span>
+            <div class="ditem">
+              <div class="dhead" onclick="tog(this)">
+                <div class="dname">Mikeltxo ↓</div>
+                <div class="dstats"><span class="ds">910 m</span><span class="ds">↓ 174 m</span><span class="dd dd-b">AZUL</span></div>
+                <span class="dtog">▾</span>
               </div>
-              <div class="descent-body">
-                Circuito en la zona Mikel Gorri, entre Askati y Pipiflow. Se accede saliendo de Askati al cruzar la segunda pista (200 m de pista + paso canadiense). Circuito para todos los niveles: los que van fuerte pueden encadenar las ondulaciones para hacerlo más exigente; los demás rulan sin dificultad. Trazado sinuoso con buen ritmo, ondulaciones y curvas constantes. Azul accesible tras Askati.
-                <br><br>
-                <a class="descent-gpx" href="https://www.bizibide.eus/en/ibilbideak/mikeltxo-%E2%86%93/" target="_blank">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-                  GPX Mikeltxo · bizibide.eus
-                </a>
+              <div class="dbody">Circuito en el paraje Mikel Gorri, entre Askati y Pipiflow. Se accede saliendo de Askati al cruzar la segunda pista (200 m pista + paso canadiense). Trazado sinuoso con ondulaciones y curvas constantes para todos los niveles. Los que van fuerte encadenan las ondulaciones, los demás las rulan cómodamente.
+                <br><br><a class="gpx-sm" href="https://www.bizibide.eus/en/ibilbideak/mikeltxo-%E2%86%93/" target="_blank"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>GPX Mikeltxo</a>
               </div>
             </div>
-
-            <div class="descent-item">
-              <div class="descent-header" onclick="toggleDescent(this)">
-                <div class="descent-name">Pipiflow ↓</div>
-                <div class="descent-stats">
-                  <span class="descent-stat">600 m</span>
-                  <span class="descent-stat">↓ 104 m</span>
-                  <span class="descent-diff diff-azul">AZUL</span>
-                </div>
-                <span class="descent-toggle">▾</span>
+            <div class="ditem">
+              <div class="dhead" onclick="tog(this)">
+                <div class="dname">Pipiflow ↓</div>
+                <div class="dstats"><span class="ds">600 m</span><span class="ds">↓ 104 m</span><span class="ds">★ 4,3/5 TF</span><span class="dd dd-b">AZUL</span></div>
+                <span class="dtog">▾</span>
               </div>
-              <div class="descent-body">
-                Cierre perfecto del fin de semana: la bajada más rápida y fluida del parque para despedirse con buen sabor de boca. Puro flow, berms y ritmo. La más valorada de Bizibide en Trailforks (4,3/5).
-              </div>
+              <div class="dbody">Cierre perfecto del fin de semana. La más fluida de Bizibide para despedirse con buen sabor. Puro flow, berms y ritmo.</div>
             </div>
-
           </div>
         </div>
       </div>
@@ -709,270 +367,142 @@
   </div><!-- /plan-a -->
 
 
-  <!-- ===================== PLAN B ===================== -->
+  <!-- ===== PLAN B ===== -->
   <div id="plan-b" class="plan">
 
-    <!-- VIERNES B -->
     <div class="day">
-      <div class="day-label">Viernes<span>Llegada — bajadas directas</span></div>
-
-      <div class="route-card">
-        <div class="route-card-header">
-          <div>
-            <div class="route-title">Circuito Pipiflow + Zalain Zoko</div>
-            <div class="route-subtitle">Entrar en calor con flow · Circular corta desde polideportivo</div>
+      <div class="dlabel">Viernes<span>Llegada — bajadas premium desde el primer momento</span></div>
+      <div class="card">
+        <div class="card-head">
+          <div><div class="ctitle">Circular Ikatzbidea parcial + Askati + Zalain Zoko</div><div class="csub">Mínimo 800 m↑ garantizados · Todo el grupo junto</div></div>
+          <span class="badge b-black">⬛ NEGRA</span>
+        </div>
+        <div class="stats">
+          <div class="stat"><div class="sval">~26 km</div><div class="slabel">Distancia</div></div>
+          <div class="stat"><div class="sval">↑ ~900 m</div><div class="slabel">Desnivel +</div></div>
+          <div class="stat"><div class="sval">↓ ~900 m</div><div class="slabel">Desnivel −</div></div>
+          <div class="stat"><div class="sval">~3,5 h</div><div class="slabel">Duración</div></div>
+        </div>
+        <div class="cbody">
+          <p class="desc">Toma la subida de Ikatzbidea hasta el punto de salida de Askati (no hace falta llegar a Pagoieta), baja Askati completa y enlaza con Zalain Zoko de vuelta al pueblo. Dos bajadas de primera calidad el viernes, con desnivel suficiente y sin llegar agotados a cenar.</p>
+          <div class="gpx-row">
+            <a class="gpx-a" href="https://www.bizibide.eus/es/ibilbideak/askati/" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>GPX Askati</a>
+            <a class="gpx-a" href="https://www.bizibide.eus/es/ibilbideak/zalainzoko/" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>GPX Zalain Zoko</a>
           </div>
-          <span class="route-badge badge-red">🟠 ROJA</span>
-        </div>
-        <div class="stats-row">
-          <div class="stat"><div class="stat-val">~16 km</div><div class="stat-label">Distancia</div></div>
-          <div class="stat"><div class="stat-val">↑ ~650 m</div><div class="stat-label">Desnivel +</div></div>
-          <div class="stat"><div class="stat-val">~2,5 h</div><div class="stat-label">Duración est.</div></div>
-          <div class="stat"><div class="stat-val">2</div><div class="stat-label">Bajadas</div></div>
-        </div>
-        <div class="route-body">
-          <p class="route-desc">Las dos bajadas más fluidas del parque para conocer el terreno sin el volumen de la ruta larga. Los de ebike pueden repetir Pipiflow 2–3 veces mientras el resto hace la circular. Conocer el suelo el viernes deja el sábado para aprovecharlo al máximo.</p>
-          <div class="descents-label">Bajadas</div>
-          <div class="descent-list">
-
-            <div class="descent-item">
-              <div class="descent-header" onclick="toggleDescent(this)">
-                <div class="descent-name">Pipiflow ↓</div>
-                <div class="descent-stats">
-                  <span class="descent-stat">600 m</span>
-                  <span class="descent-stat">↓ 104 m</span>
-                  <span class="descent-diff diff-azul">AZUL</span>
-                </div>
-                <span class="descent-toggle">▾</span>
+          <div class="dlabel2">Bajadas</div>
+          <div class="dlist">
+            <div class="ditem">
+              <div class="dhead" onclick="tog(this)">
+                <div class="dname">Askati ↓</div>
+                <div class="dstats"><span class="ds">1,6 km</span><span class="ds">↓ 347 m</span><span class="dd dd-n">NEGRA</span></div>
+                <span class="dtog">▾</span>
               </div>
-              <div class="descent-body">
-                La más rápida y fluida de Bizibide. Singletrack con berms y saltos, puro ritmo. Bajada de la carrera oficial. 4,3/5 en Trailforks. La visibilidad del trazado puede ser algo difícil — llevar GPX. Duración ~4 minutos.
-                <br><br>
-                <a class="descent-gpx" href="https://www.bizibide.eus/es/ibilbideak/pipiflow/" target="_blank">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-                  GPX Pipiflow · bizibide.eus
-                </a>
+              <div class="dbody">Techo técnico del fin de semana. Cresta inclinada con vistas, tramo arbolado, trialeras junto a la regata, remate con flow. Sin señalizar — GPX obligatorio.
+                <br><br><a class="yt-a" href="https://www.youtube.com/watch?v=LR6khSVh3h4" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 8l6 4-6 4V8z"/><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>▶ Ver Askati RAW en YouTube</a>
               </div>
             </div>
-
-            <div class="descent-item">
-              <div class="descent-header" onclick="toggleDescent(this)">
-                <div class="descent-name">Zalain Zoko ↓</div>
-                <div class="descent-stats">
-                  <span class="descent-stat">1,6 km</span>
-                  <span class="descent-stat">↓ 268 m</span>
-                  <span class="descent-diff diff-roja">ROJA</span>
-                </div>
-                <span class="descent-toggle">▾</span>
+            <div class="ditem">
+              <div class="dhead" onclick="tog(this)">
+                <div class="dname">Zalain Zoko ↓</div>
+                <div class="dstats"><span class="ds">1,6 km</span><span class="ds">↓ 268 m</span><span class="dd dd-r">ROJA</span></div>
+                <span class="dtog">▾</span>
               </div>
-              <div class="descent-body">
-                La más disfrutona y rítmica del parque. Descenso desde el collado con berms naturales, curvas abiertas y secciones rápidas. La favorita de todo el que visita Lesaka. Señalizada. GPX recomendable igualmente.
+              <div class="dbody">La favorita del parque. Berms, curvas abiertas y secciones rápidas. Señalizada. Perfecta para terminar el viernes con buen sabor.
+                <br><br><a class="yt-a" href="https://www.youtube.com/watch?v=xfPl6xOGxHA" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 8l6 4-6 4V8z"/><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>▶ Bajadas Lesaka 2023</a>
               </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SABADO B -->
-    <div class="day">
-      <div class="day-label">Sábado<span>Día grande — Askati + repeticiones</span></div>
-
-      <div class="route-card">
-        <div class="route-card-header">
-          <div>
-            <div class="route-title">Mañana: Ikatzbidea + Askati</div>
-            <div class="route-subtitle">Ruta larga con la bajada técnica · Comida en Lesaka</div>
-          </div>
-          <span class="route-badge badge-red">🟠 ROJA</span>
-        </div>
-        <div class="stats-row">
-          <div class="stat"><div class="stat-val">~32 km</div><div class="stat-label">Distancia</div></div>
-          <div class="stat"><div class="stat-val">↑ ~1.200 m</div><div class="stat-label">Desnivel +</div></div>
-          <div class="stat"><div class="stat-val">~4-5 h</div><div class="stat-label">Duración est.</div></div>
-          <div class="stat"><div class="stat-val">3</div><div class="stat-label">Bajadas</div></div>
-        </div>
-        <div class="route-body">
-          <p class="route-desc">Igual que en la Propuesta A: Ikatzbidea hasta Pagoieta con desvío para coger Askati. El día más físico de la semana. Terminar en Lesaka para comer con ganas.</p>
-          <div style="margin-bottom: 12px;">
-            <a class="gpx-link" href="https://www.bizibide.eus/es/ibilbideak/ikatz-bidea/" target="_blank">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-              GPX Ikatzbidea · bizibide.eus
-            </a>
-            <a class="gpx-link" href="https://www.bizibide.eus/es/ibilbideak/askati/" target="_blank">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-              GPX Askati · bizibide.eus
-            </a>
-          </div>
-          <div class="descents-label">Bajadas de la mañana</div>
-          <div class="descent-list">
-            <div class="descent-item">
-              <div class="descent-header" onclick="toggleDescent(this)">
-                <div class="descent-name">Askati ↓</div>
-                <div class="descent-stats">
-                  <span class="descent-stat">1,6 km</span>
-                  <span class="descent-stat">↓ 347 m</span>
-                  <span class="descent-diff diff-roja">ROJA–NEGRA</span>
-                </div>
-                <span class="descent-toggle">▾</span>
-              </div>
-              <div class="descent-body">
-                Techo técnico del fin de semana. Cresta con vistas, tramo arbolado, sección de trialeras y remate con flow. Sin señalizar — GPX obligatorio. Casco y protecciones recomendadas.
-                <br><br>
-                <a class="descent-gpx" href="https://www.bizibide.eus/es/ibilbideak/askati/" target="_blank">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-                  GPX Askati · bizibide.eus
-                </a>
-              </div>
-            </div>
-            <div class="descent-item">
-              <div class="descent-header" onclick="toggleDescent(this)">
-                <div class="descent-name">Irasmendi ↓</div>
-                <div class="descent-stats">
-                  <span class="descent-stat">1,3 km</span>
-                  <span class="descent-stat">↓ 253 m</span>
-                  <span class="descent-diff diff-azul">AZUL</span>
-                </div>
-                <span class="descent-toggle">▾</span>
-              </div>
-              <div class="descent-body">Bajada de enlace fácil desde Agiña. Descanso activo entre bajadas técnicas.</div>
-            </div>
-            <div class="descent-item">
-              <div class="descent-header" onclick="toggleDescent(this)">
-                <div class="descent-name">Mil Kurbas ↓</div>
-                <div class="descent-stats">
-                  <span class="descent-stat">~1,5 km</span>
-                  <span class="descent-stat">↓ ~200 m</span>
-                  <span class="descent-diff diff-azul">AZUL</span>
-                </div>
-                <span class="descent-toggle">▾</span>
-              </div>
-              <div class="descent-body">Cierre de Ikatzbidea de vuelta al pueblo. Curvas encadenadas en sendero, sin obstáculos. Ideal para llegar rodando hasta el restaurante.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="pm-divider">Pausa para comer en Lesaka</div>
-
-      <div class="route-card">
-        <div class="route-card-header">
-          <div>
-            <div class="route-title">Tarde: Pipiflow × 2–3 + Zalain Zoko × 2</div>
-            <div class="route-subtitle">Modo repeticiones — máximo descenso acumulado</div>
-          </div>
-          <span class="route-badge badge-red">🟠 ROJA</span>
-        </div>
-        <div class="stats-row">
-          <div class="stat"><div class="stat-val">~20 km</div><div class="stat-label">Distancia</div></div>
-          <div class="stat"><div class="stat-val">↑ ~800 m</div><div class="stat-label">Desnivel +</div></div>
-          <div class="stat"><div class="stat-val">~2,5 h</div><div class="stat-label">Duración est.</div></div>
-          <div class="stat"><div class="stat-val">4–5 bajadas</div><div class="stat-label">Repeticiones</div></div>
-        </div>
-        <div class="route-body">
-          <p class="route-desc">El modo repeticiones es el punto fuerte de esta propuesta. Los de ebike suben en minutos y repiten las bajadas que más les gustan. Para ti: circular pedaleada con tow rope en las rampas más cortas. Es el día con más metros de descenso acumulados del fin de semana.</p>
-          <div class="descents-label">Bajadas (varias pasadas)</div>
-          <div class="descent-list">
-            <div class="descent-item">
-              <div class="descent-header" onclick="toggleDescent(this)">
-                <div class="descent-name">Pipiflow ↓ × 2–3</div>
-                <div class="descent-stats">
-                  <span class="descent-stat">600 m c/u</span>
-                  <span class="descent-stat">↓ 104 m c/u</span>
-                  <span class="descent-diff diff-azul">AZUL</span>
-                </div>
-                <span class="descent-toggle">▾</span>
-              </div>
-              <div class="descent-body">Con las piernas ya rodadas, Pipiflow se convierte en un parque de diversiones. Dos o tres pasadas seguidas para exprimirla. Los de ebike la pueden hacer 5–6 veces en el mismo tiempo.</div>
-            </div>
-            <div class="descent-item">
-              <div class="descent-header" onclick="toggleDescent(this)">
-                <div class="descent-name">Zalain Zoko ↓ × 2</div>
-                <div class="descent-stats">
-                  <span class="descent-stat">1,6 km c/u</span>
-                  <span class="descent-stat">↓ 268 m c/u</span>
-                  <span class="descent-diff diff-roja">ROJA</span>
-                </div>
-                <span class="descent-toggle">▾</span>
-              </div>
-              <div class="descent-body">Dos pasadas de Zalain Zoko con las piernas en su mejor momento. La segunda siempre sale mejor que la primera — el trazado se empieza a memorizar y se puede ir más a fondo.</div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- DOMINGO B -->
     <div class="day">
-      <div class="day-label">Domingo<span>Cierre y vuelta a Madrid</span></div>
+      <div class="dlabel">Sábado<span>Máximo desnivel total — mañana y tarde</span></div>
 
-      <div class="route-card">
-        <div class="route-card-header">
-          <div>
-            <div class="route-title">Ruta Enduro Base + Mikeltxo</div>
-            <div class="route-subtitle">Cierre completo · Salida 8:00 · Ducha y carretera</div>
-          </div>
-          <span class="route-badge badge-black">⬛ NEGRA</span>
+      <div class="card">
+        <div class="card-head">
+          <div><div class="ctitle">Mañana: Ikatzbidea completa</div><div class="csub">30 km · 1.058 m↑ · El día más físico · Comida en Lesaka</div></div>
+          <span class="badge b-red">🟠 ROJA</span>
         </div>
-        <div class="stats-row">
-          <div class="stat"><div class="stat-val">~25 km</div><div class="stat-label">Distancia</div></div>
-          <div class="stat"><div class="stat-val">↑ ~950 m</div><div class="stat-label">Desnivel +</div></div>
-          <div class="stat"><div class="stat-val">~3,5 h</div><div class="stat-label">Duración est.</div></div>
-          <div class="stat"><div class="stat-val">3</div><div class="stat-label">Bajadas</div></div>
+        <div class="stats">
+          <div class="stat"><div class="sval">30 km</div><div class="slabel">Distancia</div></div>
+          <div class="stat"><div class="sval">↑ 1.058 m</div><div class="slabel">Desnivel +</div></div>
+          <div class="stat"><div class="sval">↓ 1.058 m</div><div class="slabel">Desnivel −</div></div>
+          <div class="stat"><div class="sval">~4-5 h</div><div class="slabel">Duración</div></div>
         </div>
-        <div class="route-body">
-          <p class="route-desc">La ruta oficial enduro base ampliada con Mikeltxo. Cierre clásico: Zalain Zoko e Irasmendi ya conocidas, y Mikeltxo como novedad del domingo. Salir a las 8:00, terminar antes de las 12:00, ducha en el polideportivo (5€ — o gratis consumiendo en un establecimiento Bizibide) y a Madrid.</p>
-          <div style="margin-bottom: 12px;">
-            <a class="gpx-link" href="https://www.bizibide.eus/es/ibilbideak/enduro/" target="_blank">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-              GPX Ruta Enduro Base · bizibide.eus
-            </a>
+        <div class="cbody">
+          <p class="desc">Ikatzbidea completa hasta Pagoieta. Subidas largas y constantes — Lesaka no perdona. Bajada por Irasmendi y Mil Kurbas. El grupo circula junto en todo momento.</p>
+          <div class="gpx-row"><a class="gpx-a" href="https://www.bizibide.eus/es/ibilbideak/ikatz-bidea/" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>GPX Ikatzbidea</a></div>
+          <div class="dlabel2">Bajadas</div>
+          <div class="dlist">
+            <div class="ditem">
+              <div class="dhead" onclick="tog(this)"><div class="dname">Irasmendi ↓</div><div class="dstats"><span class="ds">1,3 km</span><span class="ds">↓ 253 m</span><span class="dd dd-b">AZUL</span></div><span class="dtog">▾</span></div>
+              <div class="dbody">Fácil y fluida desde Agiña. Sin dificultades. Bajar juntos sin esperas.</div>
+            </div>
+            <div class="ditem">
+              <div class="dhead" onclick="tog(this)"><div class="dname">Mil Kurbas ↓</div><div class="dstats"><span class="ds">~1,5 km</span><span class="ds">↓ ~200 m</span><span class="dd dd-b">AZUL</span></div><span class="dtog">▾</span></div>
+              <div class="dbody">Curvas encadenadas de vuelta al pueblo. Sin obstáculos. Llegas rodando hasta el restaurante.</div>
+            </div>
           </div>
-          <div class="descents-label">Bajadas</div>
-          <div class="descent-list">
-            <div class="descent-item">
-              <div class="descent-header" onclick="toggleDescent(this)">
-                <div class="descent-name">Zalain Zoko ↓</div>
-                <div class="descent-stats">
-                  <span class="descent-stat">1,6 km</span>
-                  <span class="descent-stat">↓ 268 m</span>
-                  <span class="descent-diff diff-roja">ROJA</span>
-                </div>
-                <span class="descent-toggle">▾</span>
-              </div>
-              <div class="descent-body">Ya la conocéis bien. Tercera pasada del fin de semana — a estas alturas sale sola.</div>
+        </div>
+      </div>
+
+      <div class="pm-div">🍽 Pausa para comer en Lesaka</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div><div class="ctitle">Tarde: Pipiflow + Zalain Zoko + Askati</div><div class="csub">Circular con las tres mejores bajadas · Todo el grupo junto</div></div>
+          <span class="badge b-red">🟠 ROJA/NEGRA</span>
+        </div>
+        <div class="stats">
+          <div class="stat"><div class="sval">~20 km</div><div class="slabel">Distancia</div></div>
+          <div class="stat"><div class="sval">↑ ~750 m</div><div class="slabel">Desnivel +</div></div>
+          <div class="stat"><div class="sval">↓ ~750 m</div><div class="slabel">Desnivel −</div></div>
+          <div class="stat"><div class="sval">~3 h</div><div class="slabel">Duración</div></div>
+        </div>
+        <div class="cbody">
+          <p class="desc">Circular de tarde encadenando las tres bajadas más destacadas. Subida hasta el inicio de Askati, bajada, enlace a Pipiflow, enlace a Zalain Zoko y de vuelta al pueblo. El mayor volumen de descenso del fin de semana en una tarde. Todo el grupo circulando junto.</p>
+          <div class="dlist">
+            <div class="ditem">
+              <div class="dhead" onclick="tog(this)"><div class="dname">Askati ↓</div><div class="dstats"><span class="ds">1,6 km</span><span class="ds">↓ 347 m</span><span class="dd dd-n">NEGRA</span></div><span class="dtog">▾</span></div>
+              <div class="dbody">Segunda pasada del fin de semana — ya se conoce el terreno, sale mucho mejor. Sin señalizar, GPX.</div>
             </div>
-            <div class="descent-item">
-              <div class="descent-header" onclick="toggleDescent(this)">
-                <div class="descent-name">Irasmendi ↓</div>
-                <div class="descent-stats">
-                  <span class="descent-stat">1,3 km</span>
-                  <span class="descent-stat">↓ 253 m</span>
-                  <span class="descent-diff diff-azul">AZUL</span>
-                </div>
-                <span class="descent-toggle">▾</span>
-              </div>
-              <div class="descent-body">Clásico de cierre. Fácil, fluida, sin sorpresas.</div>
+            <div class="ditem">
+              <div class="dhead" onclick="tog(this)"><div class="dname">Pipiflow ↓</div><div class="dstats"><span class="ds">600 m</span><span class="ds">↓ 104 m</span><span class="ds">★ 4,3/5</span><span class="dd dd-b">AZUL</span></div><span class="dtog">▾</span></div>
+              <div class="dbody">Puro flow — la mejor valorada de Lesaka. Con las piernas del día encima es cuando más se disfruta.</div>
             </div>
-            <div class="descent-item">
-              <div class="descent-header" onclick="toggleDescent(this)">
-                <div class="descent-name">Mikeltxo ↓</div>
-                <div class="descent-stats">
-                  <span class="descent-stat">910 m</span>
-                  <span class="descent-stat">↓ 174 m</span>
-                  <span class="descent-diff diff-azul">AZUL</span>
-                </div>
-                <span class="descent-toggle">▾</span>
-              </div>
-              <div class="descent-body">
-                La novedad del domingo. Circuito entre Askati y Pipiflow, acceso desde Askati al cruzar la segunda pista. Sinuoso, con ondulaciones y buen ritmo. Para todos los niveles — los que van fuerte encadenan las ondulaciones, los demás las rulan cómodamente.
-                <br><br>
-                <a class="descent-gpx" href="https://www.bizibide.eus/en/ibilbideak/mikeltxo-%E2%86%93/" target="_blank">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-                  GPX Mikeltxo · bizibide.eus
-                </a>
-              </div>
+            <div class="ditem">
+              <div class="dhead" onclick="tog(this)"><div class="dname">Zalain Zoko ↓</div><div class="dstats"><span class="ds">1,6 km</span><span class="ds">↓ 268 m</span><span class="dd dd-r">ROJA</span></div><span class="dtog">▾</span></div>
+              <div class="dbody">Cierre de la tarde en la bajada favorita del parque. Con el terreno del viernes ya memorizado, se coge otro ritmo.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="dlabel">Domingo<span>Cierre ligero — salida 9:00 · Spa + comida hasta 15:00 · Carretera Madrid</span></div>
+      <div class="card">
+        <div class="card-head">
+          <div><div class="ctitle">Circuito Pipiflow + Mikeltxo</div><div class="csub">Ruta corta de cierre · Las bajadas más fluidas</div></div>
+          <span class="badge b-red">🟠 ROJA</span>
+        </div>
+        <div class="stats">
+          <div class="stat"><div class="sval">~12 km</div><div class="slabel">Distancia</div></div>
+          <div class="stat"><div class="sval">↑ ~450 m</div><div class="slabel">Desnivel +</div></div>
+          <div class="stat"><div class="sval">↓ ~450 m</div><div class="slabel">Desnivel −</div></div>
+          <div class="stat"><div class="sval">~2 h</div><div class="slabel">Duración</div></div>
+        </div>
+        <div class="cbody">
+          <p class="desc">Salida a las 9:00 → terminar ~11:00 → zona termal hasta las 12:30 → Sello Bizibide en comida → carretera ≤15:00. Cierre tranquilo con las bajadas más fluidas para no llegar reventados al coche.</p>
+          <div class="dlist">
+            <div class="ditem">
+              <div class="dhead" onclick="tog(this)"><div class="dname">Pipiflow ↓</div><div class="dstats"><span class="ds">600 m</span><span class="ds">↓ 104 m</span><span class="dd dd-b">AZUL</span></div><span class="dtog">▾</span></div>
+              <div class="dbody">Despedida en la bajada más fluida del parque. Puro ritmo, buen sabor de boca.</div>
+            </div>
+            <div class="ditem">
+              <div class="dhead" onclick="tog(this)"><div class="dname">Mikeltxo ↓</div><div class="dstats"><span class="ds">910 m</span><span class="ds">↓ 174 m</span><span class="dd dd-b">AZUL</span></div><span class="dtog">▾</span></div>
+              <div class="dbody">Circuito Mikel Gorri, entre Askati y Pipiflow. Sinuoso, ondulaciones, curvas. Para todos los niveles.</div>
             </div>
           </div>
         </div>
@@ -981,47 +511,57 @@
 
   </div><!-- /plan-b -->
 
-  <!-- INFO BOX -->
-  <div class="info-box">
-    <strong>⚠️ Importante para la bici muscular:</strong> En Lesaka las subidas son empinadas y constantes — no hay kilómetros fáciles. Con tow rope en las rampas más brutas te mantienes al ritmo del grupo en las subidas, y en las bajadas (que es lo que importa) vas igual. Descargar <strong>todos los GPX antes de salir</strong> — Askati y Pipiflow no están señalizadas en el terreno. Llevar agua abundante, especialmente en junio.
+  <div class="ibox">
+    <strong>📌 Dinámica de grupo:</strong> Todo el grupo rueda junto en todo momento. Las subidas van al ritmo del más lento; las bajadas las hace cada uno a su ritmo y se espera al pie. El tow rope en las rampas más empinadas mantiene el ritmo colectivo sin alterar la dinámica. <strong>GPX obligatorio para Askati y Pipiflow</strong> — no están señalizadas en campo.
   </div>
 
-  <!-- SERVICES -->
-  <div class="services">
-    <h3>Servicios Bizibide</h3>
-    <div class="services-grid">
-      <div class="service-item"><strong>Duchas y vestuarios</strong>5€ (o gratis con Sello Bizibide)</div>
-      <div class="service-item"><strong>Lavado de bicis</strong>Gratuito</div>
-      <div class="service-item"><strong>Autoreparación</strong>Gratuito</div>
-      <div class="service-item"><strong>Guardabicis</strong>5€</div>
-      <div class="service-item"><strong>Spa / Piscina</strong>8€ (o gratis con Sello Bizibide)</div>
-      <div class="service-item"><strong>Aparcamiento</strong>Gratuito (polideportivo)</div>
+  <!-- POLIDEPORTIVO -->
+  <div class="poli">
+    <h3>🚿 Polideportivo de Lesaka</h3>
+    <p class="poli-sub">Lesakako Udal Kiroldegia · Komentu kalea 2 · Tel. 948 63 74 00 · <a href="https://www.lesakakoudalkiroldegia.eus" target="_blank" style="color:var(--green)">lesakakoudalkiroldegia.eus</a></p>
+
+    <div class="pgrid">
+      <div class="pcard"><div class="pcard-t">Duchas y vestuarios</div><div class="price">5 €</div><p class="pnote">Recuperable con Sello Bizibide</p></div>
+      <div class="pcard"><div class="pcard-t">Zona termal + spa</div><div class="price">8 €</div><p class="pnote">Recuperable con Sello Bizibide · Ideal para el domingo tras la ruta</p></div>
+      <div class="pcard"><div class="pcard-t">Guardabicis</div><div class="price">5 €</div><p class="pnote">Pide la llave en recepción</p></div>
+      <div class="pcard"><div class="pcard-t">Lavado bicis</div><div class="price">Gratis</div><p class="pnote">Zona exterior del polideportivo</p></div>
+      <div class="pcard"><div class="pcard-t">Autoreparación</div><div class="price">Gratis</div><p class="pnote">Zona exterior</p></div>
+      <div class="pcard"><div class="pcard-t">Piscina de verano</div><div class="price">Incluida</div><p class="pnote">Abierta 10 jun–10 sept · 11:00–20:00</p></div>
     </div>
-    <p style="font-size: 12px; color: var(--gray-400); margin-top: 10px;">El Sello Bizibide permite recuperar el coste de duchas/spa consumiendo en bares y tiendas locales adheridas.</p>
+
+    <p style="font-size:13px;font-weight:500;color:var(--g700);margin-bottom:8px;">Zona termal — instalaciones:</p>
+    <div class="tgrid">
+      <div class="titem">💧 Manantiales</div>
+      <div class="titem">🛏 Camas de agua</div>
+      <div class="titem">🦶 Pediluvio</div>
+      <div class="titem">🔥 Sauna seca</div>
+      <div class="titem">💨 Sauna turca</div>
+      <div class="titem">🌀 Jacuzzi</div>
+    </div>
+
+    <div class="sello" style="margin-top:12px;">
+      <strong>💡 Truco Sello Bizibide — duchas y spa gratis:</strong> Al pagar duchas (5€) o spa (8€) en el polideportivo, recibes un bono del mismo valor para gastar en bares, restaurantes o tiendas de Lesaka con el #SelloBizibide. Plan del domingo: ruta → ducha/spa → comida con el bono = las duchas y el spa salen gratis. Consulta establecimientos en <a href="https://www.bizibide.eus/es/bizibide-zigilua/" target="_blank">bizibide.eus/es/bizibide-zigilua</a>
+    </div>
+    <p style="font-size:12px;color:var(--g400);margin-top:10px;">⚠️ Confirmar horario exacto del domingo llamando al 948 63 74 00 antes del viaje.</p>
   </div>
 
 </div>
 
 <footer>
-  Bizibide Lesaka — <a href="https://www.bizibide.eus" target="_blank" style="color: inherit;">bizibide.eus</a> · Todos los GPX disponibles en la web oficial · Trailforks: <a href="https://www.trailforks.com/region/lesaka-61385/" target="_blank" style="color: inherit;">Lesaka region</a>
+  Bizibide Lesaka — <a href="https://www.bizibide.eus" target="_blank">bizibide.eus</a> · GPX disponibles en la web oficial · <a href="https://www.trailforks.com/region/lesaka-61385/" target="_blank">Trailforks Lesaka</a> · <a href="https://www.lesakakoudalkiroldegia.eus" target="_blank">Polideportivo Lesaka</a>
 </footer>
 
 <script>
-  function showPlan(id, btn) {
-    document.querySelectorAll('.plan').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-    document.getElementById('plan-' + id).classList.add('active');
-    btn.classList.add('active');
-  }
-
-  function toggleDescent(header) {
-    const body = header.nextElementSibling;
-    const toggle = header.querySelector('.descent-toggle');
-    const isOpen = body.classList.contains('open');
-    body.classList.toggle('open', !isOpen);
-    toggle.classList.toggle('open', !isOpen);
-  }
+function showPlan(id,btn){
+  document.querySelectorAll('.plan').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('plan-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+function tog(h){
+  const b=h.nextElementSibling,t=h.querySelector('.dtog'),o=b.classList.contains('open');
+  b.classList.toggle('open',!o);t.classList.toggle('open',!o);
+}
 </script>
-
 </body>
 </html>
