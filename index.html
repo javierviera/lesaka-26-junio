@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesaka MTB Enduro — Junio 2026</title>
+<title>Lesaka MTB Enduro — 26-28 Junio 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -11,14 +11,14 @@
     --amber:#E76F00;--amber-pale:#FFF0DC;
     --red:#C1121F;--red-pale:#FFE5E7;
     --blue:#1B4F72;--blue-pale:#D6EAF8;
+    --purple:#5B21B6;--purple-pale:#EDE9FE;
     --gray-900:#1A1A1A;--gray-700:#3D3D3D;--gray-400:#888;
     --gray-50:#FAFAF8;--border:#E0DDD6;--white:#fff;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   body{font-family:'DM Sans',sans-serif;background:var(--gray-50);color:var(--gray-900);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;}
 
-  /* HERO */
-  .hero{background:var(--gray-900);color:var(--white);padding:3rem 2rem 2.5rem;position:relative;overflow:hidden;}
+  .hero{background:var(--gray-900);color:var(--white);padding:3rem 2rem 2rem;position:relative;overflow:hidden;}
   .hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 30px,rgba(255,255,255,.015) 30px,rgba(255,255,255,.015) 31px);}
   .hero-inner{max-width:800px;margin:0 auto;position:relative;}
   .hero-label{font-size:11px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--green-light);margin-bottom:12px;}
@@ -28,179 +28,197 @@
   .hero-meta-item{font-size:13px;color:rgba(255,255,255,.6);}
   .hero-meta-item strong{color:var(--white);font-weight:500;display:block;}
 
-  /* RUTA MADRID */
-  .madrid-section{background:var(--gray-900);border-top:1px solid rgba(255,255,255,.08);}
-  .madrid-inner{max-width:800px;margin:0 auto;padding:1.5rem 2rem;}
-  .madrid-toggle{width:100%;background:none;border:none;color:var(--white);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:0;}
-  .madrid-toggle span{color:rgba(255,255,255,.5);font-size:11px;letter-spacing:.08em;text-transform:uppercase;}
-  .madrid-body{display:none;margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.08);}
-  .madrid-body.open{display:block;}
-  .route-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:1rem;}
-  .route-card-dark{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:12px 14px;}
-  .route-card-dark h4{font-size:12px;font-weight:500;color:var(--green-light);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
-  .route-step{font-size:12px;color:rgba(255,255,255,.7);margin-bottom:4px;padding-left:10px;position:relative;}
-  .route-step::before{content:'→';position:absolute;left:0;color:var(--green-light);}
-  .route-step strong{color:var(--white);}
-  .route-note{font-size:11px;color:rgba(255,255,255,.4);margin-top:8px;font-style:italic;}
+  .dark-section{background:var(--gray-900);border-top:1px solid rgba(255,255,255,.07);}
+  .dark-inner{max-width:800px;margin:0 auto;padding:0 2rem;}
+  .dark-toggle{width:100%;background:none;border:none;color:var(--white);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:1rem 0;}
+  .dark-arrow{color:rgba(255,255,255,.4);font-size:11px;text-transform:uppercase;letter-spacing:.08em;transition:transform .2s;}
+  .dark-arrow.open{transform:rotate(180deg);}
+  .dark-body{display:none;padding-bottom:1.5rem;}
+  .dark-body.open{display:block;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;}
+  .dc{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:12px 14px;}
+  .dc h4{font-size:11px;font-weight:600;color:var(--green-light);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+  .ds{font-size:12px;color:rgba(255,255,255,.7);margin-bottom:4px;padding-left:14px;position:relative;}
+  .ds::before{content:'→';position:absolute;left:0;color:var(--green-light);}
+  .ds strong{color:var(--white);}
+  .dn{font-size:11px;color:rgba(255,255,255,.35);margin-top:6px;font-style:italic;}
+  .aloj-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:14px 16px;display:flex;gap:14px;}
+  .aloj-icon{font-size:28px;flex-shrink:0;}
+  .aloj-title{font-size:14px;font-weight:500;color:var(--white);margin-bottom:2px;}
+  .aloj-sub{font-size:12px;color:rgba(255,255,255,.45);margin-bottom:8px;}
+  .aloj-d{font-size:12px;color:rgba(255,255,255,.7);margin-bottom:3px;}
+  .aloj-d strong{color:var(--white);}
+  .aloj-badge{display:inline-block;background:var(--green-light);color:var(--gray-900);font-size:10px;font-weight:700;padding:2px 7px;border-radius:100px;margin-left:6px;}
+  .aloj-link{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:500;color:var(--green-light);text-decoration:none;margin-top:6px;}
 
-  /* CONTAINER */
   .container{max-width:800px;margin:0 auto;padding:2rem 1.5rem 4rem;}
-
-  /* DAY */
   .day{margin-bottom:2.5rem;}
   .day-label{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-400);margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--border);}
   .day-label span{color:var(--gray-900);font-size:14px;font-weight:500;letter-spacing:0;text-transform:none;display:block;margin-top:2px;}
 
-  /* ROUTE CARD */
-  .route-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:12px;}
-  .route-card-header{padding:1rem 1.25rem .75rem;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;justify-content:space-between;gap:12px;}
-  .route-title{font-size:16px;font-weight:500;}
-  .route-subtitle{font-size:12px;color:var(--gray-400);margin-top:2px;}
-  .route-badge{font-size:10px;font-weight:600;padding:3px 9px;border-radius:100px;white-space:nowrap;flex-shrink:0;letter-spacing:.04em;}
-  .badge-black{background:var(--gray-900);color:var(--white);}
-  .badge-red{background:var(--red-pale);color:var(--red);}
+  .rc{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:12px;}
+  .rc-hdr{padding:1rem 1.25rem .75rem;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;justify-content:space-between;gap:12px;}
+  .rc-title{font-size:16px;font-weight:500;}
+  .rc-sub{font-size:12px;color:var(--gray-400);margin-top:2px;}
+  .badge{font-size:10px;font-weight:600;padding:3px 9px;border-radius:100px;white-space:nowrap;flex-shrink:0;letter-spacing:.04em;}
+  .b-black{background:var(--gray-900);color:var(--white);}
+  .b-red{background:var(--red-pale);color:var(--red);}
+  .b-blue{background:var(--blue-pale);color:var(--blue);}
+  .b-purple{background:var(--purple-pale);color:var(--purple);}
 
-  /* STATS */
-  .stats-row{display:flex;border-bottom:1px solid var(--border);}
-  .stat{flex:1;padding:.65rem .75rem;border-right:1px solid var(--border);text-align:center;}
-  .stat:last-child{border-right:none;}
-  .stat-val{font-size:16px;font-weight:500;line-height:1.2;}
-  .stat-label{font-size:10px;color:var(--gray-400);text-transform:uppercase;letter-spacing:.08em;margin-top:1px;}
+  .sr{display:flex;border-bottom:1px solid var(--border);}
+  .st{flex:1;padding:.65rem .75rem;border-right:1px solid var(--border);text-align:center;}
+  .st:last-child{border-right:none;}
+  .sv{font-size:16px;font-weight:500;line-height:1.2;}
+  .sl{font-size:10px;color:var(--gray-400);text-transform:uppercase;letter-spacing:.08em;margin-top:1px;}
 
-  /* BODY */
-  .route-body{padding:1rem 1.25rem;}
-  .route-desc{font-size:13.5px;color:var(--gray-700);line-height:1.65;margin-bottom:1rem;}
+  .rb{padding:1rem 1.25rem;}
+  .rdesc{font-size:13.5px;color:var(--gray-700);line-height:1.65;margin-bottom:1rem;}
 
-  /* GPX DOWNLOAD */
-  .gpx-download{display:flex;align-items:center;gap:10px;background:var(--green-pale);border:1px solid rgba(45,106,79,.2);border-radius:8px;padding:10px 14px;margin-bottom:1rem;text-decoration:none;}
-  .gpx-download-icon{width:32px;height:32px;background:var(--green);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-  .gpx-download-icon svg{width:16px;height:16px;color:white;}
-  .gpx-download-text{flex:1;}
-  .gpx-download-name{font-size:13px;font-weight:500;color:var(--green);display:block;}
-  .gpx-download-sub{font-size:11px;color:var(--green);opacity:.7;}
-  .gpx-download-btn{font-size:11px;font-weight:600;color:var(--green);background:white;border:1px solid rgba(45,106,79,.3);padding:4px 10px;border-radius:100px;}
+  .gpx-btn{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:500;color:var(--green);text-decoration:none;background:var(--green-pale);border:1px solid rgba(45,106,79,.2);padding:7px 14px;border-radius:8px;margin-bottom:1rem;}
+  .gpx-btn:hover{opacity:.8;}
+  .gpx-btn svg{width:14px;height:14px;flex-shrink:0;}
+  .gpx-btn-dl{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:500;color:var(--blue);text-decoration:none;background:var(--blue-pale);border:1px solid rgba(27,79,114,.2);padding:7px 14px;border-radius:8px;margin-bottom:1rem;margin-left:6px;}
+  .gpx-btn-dl:hover{opacity:.8;}
+  .gpx-btn-dl svg{width:14px;height:14px;flex-shrink:0;}
 
-  /* DESCENTS */
-  .descents-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-400);margin-bottom:8px;}
-  .descent-list{display:flex;flex-direction:column;gap:8px;}
-  .descent-item{border:1px solid var(--border);border-radius:8px;overflow:hidden;}
-  .descent-header{display:flex;align-items:center;gap:8px;padding:9px 12px;background:var(--gray-50);border-bottom:1px solid var(--border);cursor:pointer;user-select:none;}
-  .descent-name{font-size:13px;font-weight:500;flex:1;}
-  .descent-stats{display:flex;gap:5px;align-items:center;flex-wrap:wrap;}
-  .descent-stat{font-size:11px;font-weight:500;background:var(--white);border:1px solid var(--border);padding:2px 7px;border-radius:100px;color:var(--gray-700);}
-  .descent-diff{font-size:9px;font-weight:700;padding:2px 7px;border-radius:100px;letter-spacing:.05em;}
-  .diff-roja{background:var(--red-pale);color:var(--red);}
-  .diff-negra{background:var(--gray-900);color:var(--white);}
-  .diff-azul{background:var(--blue-pale);color:var(--blue);}
-  .descent-toggle{font-size:14px;color:var(--gray-400);transition:transform .2s;line-height:1;flex-shrink:0;}
-  .descent-toggle.open{transform:rotate(180deg);}
-  .descent-body{padding:10px 12px;font-size:12.5px;color:var(--gray-700);line-height:1.65;display:none;}
-  .descent-body.open{display:block;}
-  .link-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
-  .pill-tf{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:500;color:var(--blue);text-decoration:none;background:var(--blue-pale);padding:3px 9px;border-radius:100px;}
-  .pill-yt{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:500;color:var(--red);text-decoration:none;background:var(--red-pale);padding:3px 9px;border-radius:100px;}
-  .pill-gpx{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:500;color:var(--green);text-decoration:none;background:var(--green-pale);padding:3px 9px;border-radius:100px;}
-  .pill-tf:hover,.pill-yt:hover,.pill-gpx:hover{opacity:.75;}
+  .dl{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-400);margin-bottom:8px;}
+  .dlist{display:flex;flex-direction:column;gap:8px;}
+  .di{border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+  .dh{display:flex;align-items:center;gap:8px;padding:9px 12px;background:var(--gray-50);border-bottom:1px solid var(--border);cursor:pointer;user-select:none;}
+  .dn2{font-size:13px;font-weight:500;flex:1;}
+  .dstats{display:flex;gap:5px;align-items:center;flex-wrap:wrap;}
+  .dstat{font-size:11px;font-weight:500;background:var(--white);border:1px solid var(--border);padding:2px 7px;border-radius:100px;color:var(--gray-700);}
+  .ddiff{font-size:9px;font-weight:700;padding:2px 7px;border-radius:100px;letter-spacing:.05em;}
+  .d-roja{background:var(--red-pale);color:var(--red);}
+  .d-negra{background:var(--gray-900);color:var(--white);}
+  .d-azul{background:var(--blue-pale);color:var(--blue);}
+  .dtog{font-size:14px;color:var(--gray-400);transition:transform .2s;line-height:1;flex-shrink:0;}
+  .dtog.open{transform:rotate(180deg);}
+  .dbody{padding:10px 12px;font-size:12.5px;color:var(--gray-700);line-height:1.65;display:none;}
+  .dbody.open{display:block;}
+  .lr{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+  .pill{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:500;text-decoration:none;padding:3px 9px;border-radius:100px;}
+  .p-tf{color:var(--blue);background:var(--blue-pale);}
+  .p-yt{color:var(--red);background:var(--red-pale);}
+  .p-rt{color:var(--purple);background:var(--purple-pale);}
+  .pill:hover{opacity:.75;}
 
-  /* MAP */
-  .map-wrap{border-radius:8px;overflow:hidden;border:1px solid var(--border);margin:10px 0;}
-  .map-wrap iframe{display:block;width:100%;height:260px;border:none;}
-  .map-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-400);margin-bottom:5px;}
+  .pmdiv{text-align:center;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gray-400);margin:14px 0;position:relative;}
+  .pmdiv::before,.pmdiv::after{content:'';position:absolute;top:50%;width:calc(50% - 60px);height:1px;background:var(--border);}
+  .pmdiv::before{left:0;}.pmdiv::after{right:0;}
 
-  /* DIVIDER */
-  .pm-div{text-align:center;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gray-400);margin:14px 0;position:relative;}
-  .pm-div::before,.pm-div::after{content:'';position:absolute;top:50%;width:calc(50% - 55px);height:1px;background:var(--border);}
-  .pm-div::before{left:0;}.pm-div::after{right:0;}
-
-  /* INFO BOXES */
   .info{border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:10px 14px;font-size:13px;color:var(--gray-700);line-height:1.6;margin-bottom:10px;}
-  .info.yellow{background:var(--amber-pale);}
-  .info.green{background:var(--green-pale);border-color:var(--green);}
-  .info.blue{background:var(--blue-pale);border-color:var(--blue);}
+  .info.y{background:var(--amber-pale);}
+  .info.g{background:var(--green-pale);border-color:var(--green);}
 
-  /* POLIDEPORTIVO */
   .poli{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-top:1rem;}
   .poli-hdr{padding:1rem 1.25rem .75rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;}
   .poli-title{font-size:15px;font-weight:500;}
   .poli-sub{font-size:12px;color:var(--gray-400);}
   .poli-body{padding:1rem 1.25rem;}
-  .poli-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:8px;margin-bottom:12px;}
-  .poli-item{background:var(--gray-50);border:1px solid var(--border);border-radius:8px;padding:8px 12px;font-size:12px;color:var(--gray-700);}
-  .poli-item strong{display:block;font-size:12.5px;color:var(--gray-900);margin-bottom:1px;}
+  .pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:8px;margin-bottom:12px;}
+  .pi{background:var(--gray-50);border:1px solid var(--border);border-radius:8px;padding:8px 12px;font-size:12px;color:var(--gray-700);}
+  .pi strong{display:block;font-size:12.5px;color:var(--gray-900);margin-bottom:1px;}
   .sello{background:var(--green-pale);border-radius:8px;padding:10px 14px;font-size:12.5px;color:var(--green);line-height:1.55;}
-  .timeline{display:flex;gap:0;margin-top:10px;}
-  .tl-item{flex:1;text-align:center;padding:8px 4px;background:var(--blue-pale);border-right:1px solid var(--blue-pale);font-size:11px;color:var(--blue);}
-  .tl-item:first-child{border-radius:8px 0 0 8px;}
-  .tl-item:last-child{border-right:none;border-radius:0 8px 8px 0;}
-  .tl-item strong{display:block;font-size:13px;font-weight:600;color:var(--blue);}
+  .tl{display:flex;margin-top:10px;}
+  .tli{flex:1;text-align:center;padding:8px 4px;background:var(--blue-pale);border-right:1px solid rgba(27,79,114,.15);font-size:11px;color:var(--blue);}
+  .tli:first-child{border-radius:8px 0 0 8px;}.tli:last-child{border-right:none;border-radius:0 8px 8px 0;}
+  .tli strong{display:block;font-size:13px;font-weight:600;color:var(--blue);}
+
+  .impbox{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.5rem;text-align:center;}
+  .impbox .ico{font-size:2.5rem;margin-bottom:8px;}
+  .impbox h3{font-size:16px;font-weight:500;margin-bottom:8px;}
+  .impbox p{font-size:13px;color:var(--gray-700);line-height:1.65;max-width:500px;margin:0 auto 14px;}
+  .imp-trails{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;}
 
   footer{text-align:center;font-size:11px;color:var(--gray-400);padding:1.5rem;border-top:1px solid var(--border);}
   footer a{color:inherit;}
+
   @media(max-width:520px){
-    .stats-row{flex-wrap:wrap;}
-    .stat{flex:1 1 45%;border-bottom:1px solid var(--border);}
+    .sr{flex-wrap:wrap;}.st{flex:1 1 45%;border-bottom:1px solid var(--border);}
     .hero h1{font-size:3.2rem;}
-    .route-grid{grid-template-columns:1fr;}
-    .timeline{flex-direction:column;}
-    .tl-item{border-right:none;border-bottom:1px solid rgba(27,79,114,.1);}
-    .tl-item:first-child{border-radius:8px 8px 0 0;}
-    .tl-item:last-child{border-radius:0 0 8px 8px;}
+    .grid2{grid-template-columns:1fr;}
+    .tl{flex-direction:column;}
+    .tli{border-right:none;border-bottom:1px solid rgba(27,79,114,.1);}
+    .tli:first-child{border-radius:8px 8px 0 0;}.tli:last-child{border-radius:0 0 8px 8px;}
   }
 </style>
 </head>
 <body>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-inner">
-    <p class="hero-label">📍 Bizibide · Lesaka, Navarra</p>
+    <p class="hero-label">📍 Bizibide · Lesaka, Navarra · 26–28 Junio 2026</p>
     <h1>MTB<br>ENDURO<br><span>LESAKA</span></h1>
     <div class="hero-meta">
-      <div class="hero-meta-item"><strong>Fechas</strong>Finales de junio · Vie–Dom</div>
+      <div class="hero-meta-item"><strong>Salida Madrid</strong>Viernes 26 · 8:00–9:00</div>
       <div class="hero-meta-item"><strong>Grupo</strong>5 riders juntos · 4 ebike + 1 muscular</div>
       <div class="hero-meta-item"><strong>Nivel</strong>Intermedio / Avanzado</div>
-      <div class="hero-meta-item"><strong>Techo técnico</strong>Askati ⬛ Negra</div>
+      <div class="hero-meta-item"><strong>Techo técnico</strong>Askati ⬛ Negra · 22% pte media</div>
     </div>
   </div>
 </div>
 
-<!-- RUTA DESDE MADRID -->
-<div class="madrid-section">
-  <div class="madrid-inner">
-    <button class="madrid-toggle" onclick="toggleMadrid()">
-      🚗 Plan de viaje desde Madrid
-      <span id="madrid-arrow">VER ▾</span>
+<!-- ALOJAMIENTO -->
+<div class="dark-section">
+  <div class="dark-inner">
+    <button class="dark-toggle" onclick="tog2('aloj')">
+      <span>🏠 Alojamiento — Duplex Frain, Lesaka</span>
+      <span class="dark-arrow" id="aloj-a">▾</span>
     </button>
-    <div class="madrid-body" id="madrid-body">
-      <div class="route-grid">
-        <div class="route-card-dark">
-          <h4>🟢 IDA — Viernes</h4>
-          <p class="route-step"><strong>07:00</strong> Salida Madrid (A-1 Norte)</p>
-          <p class="route-step"><strong>07:00–08:30</strong> Madrid → Burgos (A-1, ~240 km)</p>
-          <p class="route-step"><strong>08:30–09:15</strong> Parada en Burgos — desayuno</p>
-          <p class="route-step"><strong>09:15–10:45</strong> Burgos → Vitoria (A-1, ~110 km)</p>
-          <p class="route-step"><strong>10:45–11:30</strong> Vitoria → Lesaka (AP-1 + N-121-A, ~80 km)</p>
-          <p class="route-step"><strong>~11:30</strong> Llegada Lesaka — polideportivo</p>
-          <p class="route-note">Total: ~430 km / ~4,5h sin paradas. Llegada sobre las 11:30–12:00. Tiempo de montar bicis y salir a rodar a las 13:00.</p>
-        </div>
-        <div class="route-card-dark">
-          <h4>🔴 VUELTA — Domingo</h4>
-          <p class="route-step"><strong>08:00</strong> Salida ruta domingo</p>
-          <p class="route-step"><strong>~11:00</strong> Fin ruta — polideportivo</p>
-          <p class="route-step"><strong>11:00–12:30</strong> Ducha + zona termal</p>
-          <p class="route-step"><strong>12:30–13:30</strong> Comida en Lesaka</p>
-          <p class="route-step"><strong>13:30–14:00</strong> Carga bicis y salida</p>
-          <p class="route-step"><strong>14:00–18:30</strong> Lesaka → Madrid (N-121-A + AP-1)</p>
-          <p class="route-step"><strong>~18:30–19:00</strong> Llegada Madrid</p>
-          <p class="route-note">Sin prisa. Si la comida se alarga hasta las 14:00, llegáis a Madrid antes de las 19:30.</p>
+    <div class="dark-body" id="aloj-b">
+      <div class="aloj-card">
+        <div class="aloj-icon">🏡</div>
+        <div>
+          <div class="aloj-title">Duplex Frain <span class="aloj-badge">9.2 / 10</span></div>
+          <div class="aloj-sub">Itturrunzubiko Plaza 17 · Lesaka · Centro del pueblo · 203 m del polideportivo</div>
+          <div class="aloj-d"><strong>Fechas:</strong> 26 al 28 de junio (viernes entrada / domingo salida)</div>
+          <div class="aloj-d"><strong>Capacidad:</strong> 4 dormitorios · 2 baños · Cocina completa · Balcón vistas montaña</div>
+          <div class="aloj-d"><strong>Anfitriona:</strong> Begoña — muy valorada, da info local sobre rutas y restaurantes</div>
+          <div class="aloj-d" style="font-size:11px;color:rgba(255,255,255,.35);margin-top:5px;">⚠️ Sin parking en el edificio — usar parking gratuito del polideportivo (5 min andando)</div>
+          <a class="aloj-link" href="https://www.booking.com/hotel/es/duplex-frain.es.html" target="_blank">Ver en Booking.com →</a>
         </div>
       </div>
-      <div class="route-card-dark">
-        <h4>🗺 Ruta recomendada</h4>
-        <p class="route-step"><strong>Madrid → Lesaka:</strong> A-1 → Burgos → Miranda de Ebro → Vitoria (AP-1) → Irún (A-8) → N-121-A hasta Lesaka</p>
-        <p class="route-step"><strong>Alternativa sin peaje:</strong> A-1 → N-1 por Álava hasta Irún → N-121-A. Añade ~30 min.</p>
-        <p class="route-step"><strong>Aparcamiento en Lesaka:</strong> Parking gratuito en el polideportivo municipal (Komentu Kalea 2). Capacidad para furgos con bicicletas.</p>
-        <p class="route-note">Google Maps ruta directa: "Madrid → Lesaka Navarra". Peajes aproximados ida: ~18–22€ (Radial + AP-1 Burgos–Vitoria).</p>
+    </div>
+  </div>
+</div>
+
+<!-- MADRID -->
+<div class="dark-section">
+  <div class="dark-inner">
+    <button class="dark-toggle" onclick="tog2('madrid')">
+      <span>🚗 Plan de viaje — Madrid ↔ Lesaka</span>
+      <span class="dark-arrow" id="madrid-a">▾</span>
+    </button>
+    <div class="dark-body" id="madrid-b">
+      <div class="grid2">
+        <div class="dc">
+          <h4>🟢 IDA — Viernes 26 junio</h4>
+          <p class="ds"><strong>8:00–9:00</strong> Salida Madrid · A-1 Norte</p>
+          <p class="ds"><strong>~10:00</strong> Burgos · Parada desayuno (30 min)</p>
+          <p class="ds"><strong>~11:30</strong> Vitoria · AP-1 → A-8 Irún</p>
+          <p class="ds"><strong>~12:30</strong> Lesaka · Dejar maletas en Duplex Frain</p>
+          <p class="ds"><strong>~13:00</strong> Polideportivo · Montar bicis</p>
+          <p class="ds"><strong>~13:30</strong> Salida a rodar</p>
+          <p class="dn">~430 km · ~4,5h sin paradas · Peajes ~18–22€</p>
+        </div>
+        <div class="dc">
+          <h4>🔴 VUELTA — Domingo 28 junio</h4>
+          <p class="ds"><strong>8:00</strong> Salida ruta domingo</p>
+          <p class="ds"><strong>~11:00</strong> Fin ruta · Polideportivo</p>
+          <p class="ds"><strong>11:00–12:30</strong> Ducha + zona termal</p>
+          <p class="ds"><strong>12:30–13:30</strong> Comida en Lesaka</p>
+          <p class="ds"><strong>~14:00</strong> Salida hacia Madrid</p>
+          <p class="ds"><strong>~18:30–19:00</strong> Llegada Madrid</p>
+          <p class="dn">Con salida 14:00 llegas a Madrid antes de las 19:00</p>
+        </div>
+      </div>
+      <div class="dc">
+        <h4>🗺 Ruta</h4>
+        <p class="ds"><strong>Con peaje:</strong> A-1 → Burgos → AP-1 Vitoria → A-8 Irún → N-121-A Lesaka</p>
+        <p class="ds"><strong>Sin peaje:</strong> A-1 → N-1 hasta Irún → N-121-A · Añade ~30 min</p>
+        <p class="ds"><strong>Parking:</strong> Polideportivo municipal · Komentu Kalea 2 · Gratuito · Capacidad furgos con bicis</p>
       </div>
     </div>
   </div>
@@ -208,78 +226,95 @@
 
 <div class="container">
 
-  <!-- ===== VIERNES ===== -->
+  <!-- ======= VIERNES ======= -->
   <div class="day">
-    <div class="day-label">Viernes<span>Llegada y primer contacto — desnivel real desde el principio</span></div>
+    <div class="day-label">Viernes 26 junio<span>Llegada ~12:30 · Salida a rodar ~13:30 · Ruta Bizibide Viernes</span></div>
 
-    <div class="route-card">
-      <div class="route-card-header">
+    <div class="rc">
+      <div class="rc-hdr">
         <div>
-          <div class="route-title">Variante Burnaizegi</div>
-          <div class="route-subtitle">Ruta enduro ampliada · Salida polideportivo Lesaka · ~13:00</div>
+          <div class="rc-title">Ruta Viernes — Mikeltxo · Askati · Pipiflow</div>
+          <div class="rc-sub">GPX oficial Trailforks · Salida desde polideportivo Lesaka</div>
         </div>
-        <span class="route-badge badge-black">⬛ NEGRA</span>
+        <span class="badge b-black">⬛ NEGRA</span>
       </div>
-      <div class="stats-row">
-        <div class="stat"><div class="stat-val">26,5 km</div><div class="stat-label">Distancia</div></div>
-        <div class="stat"><div class="stat-val">↑ 1.134 m</div><div class="stat-label">Desnivel +</div></div>
-        <div class="stat"><div class="stat-val">↓ 1.134 m</div><div class="stat-label">Desnivel −</div></div>
-        <div class="stat"><div class="stat-val">~4,5 h</div><div class="stat-label">Duración est.</div></div>
+      <div class="sr">
+        <div class="st"><div class="sv">16,5 km</div><div class="sl">Distancia</div></div>
+        <div class="st"><div class="sv">↑ 1.326 m</div><div class="sl">Desnivel +</div></div>
+        <div class="st"><div class="sv">↓ 1.326 m</div><div class="sl">Desnivel −</div></div>
+        <div class="st"><div class="sv">563 m</div><div class="sl">Cota máx.</div></div>
       </div>
-      <div class="route-body">
-        <p class="route-desc">Ruta oficial enduro base con la variante de Burnaizegi, que sube hasta el límite con Artikutza y añade desnivel extra. Primer día: leer el terreno, conocer las bajadas señalizadas, llegar a cenar con ganas. Todo el grupo junto en subidas y bajadas.</p>
+      <div class="rb">
+        <p class="rdesc">Primera ruta del fin de semana. Llegáis de Madrid, dejáis maletas en el Duplex Frain y salís a rodar a las 13:30. Tres bajadas de primer nivel para conocer el terreno: Mikeltxo para calentar, Askati como plato fuerte y Pipiflow para cerrar con flow. Todo el grupo junto siempre.</p>
 
-        <a class="gpx-download" href="gpx/viernes_zalainzoko_irasmendi.gpx" download>
-          <div class="gpx-download-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></div>
-          <div class="gpx-download-text">
-            <span class="gpx-download-name">GPX Viernes — Zalain Zoko + Irasmendi</span>
-            <span class="gpx-download-sub">Descarga y carga en tu GPS / Komoot / Wikiloc antes de salir de Madrid</span>
-          </div>
-          <span class="gpx-download-btn">⬇ GPX</span>
+        <a class="gpx-btn" href="https://www.trailforks.com/ridelog/planner/view/680908/" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Ver ruta en Trailforks #680908
+        </a>
+        <a class="gpx-btn-dl" href="lesaka-viernes.gpx" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          ⬇ Descargar GPX viernes
         </a>
 
-        <div class="map-label">Zona de las bajadas</div>
-        <div class="map-wrap">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d8000!2d-1.762!3d43.260!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ses!2ses!4v1700000000000" allowfullscreen loading="lazy"></iframe>
-        </div>
+        <div class="dl">Bajadas del viernes</div>
+        <div class="dlist">
 
-        <div class="descents-label">Bajadas del viernes</div>
-        <div class="descent-list">
-
-          <div class="descent-item">
-            <div class="descent-header" onclick="tog(this)">
-              <div class="descent-name">Zalain Zoko ↓</div>
-              <div class="descent-stats">
-                <span class="descent-stat">1,6 km</span>
-                <span class="descent-stat">↓ 268 m</span>
-                <span class="descent-stat">4.6 ★</span>
-                <span class="descent-diff diff-roja">ROJA</span>
+          <div class="di">
+            <div class="dh" onclick="tog(this)">
+              <div class="dn2">Mikeltxo ↓</div>
+              <div class="dstats">
+                <span class="dstat">910 m</span>
+                <span class="dstat">↓ 174 m</span>
+                <span class="ddiff d-azul">AZUL</span>
               </div>
-              <span class="descent-toggle">▾</span>
+              <span class="dtog">▾</span>
             </div>
-            <div class="descent-body">
-              La bajada más valorada de Lesaka (4,6/5 en Trailforks — la mejor puntuada del parque). Desciende desde el collado hasta el barrio de Zalain Zoko bordeando el río Bidasoa. Berms naturales, curvas abiertas y secciones rápidas con mucho ritmo. La primera vez que la ruedes querrás subir a repetirla. Señalizada en campo.
-              <div class="link-row">
-                <a class="pill-tf" href="https://www.trailforks.com/trails/zalainzoko/" target="_blank">📍 Trailforks — Zalain Zoko</a>
-                <a class="pill-yt" href="https://www.youtube.com/watch?v=4loAx5tGLqg" target="_blank">▶ Video Bizibide BTT</a>
+            <div class="dbody">
+              Circuito en la zona Mikel Gorri entre Askati y Pipiflow. Primera bajada del fin de semana — ideal para calentar. Trazado sinuoso con ondulaciones para todos los niveles. Los que van fuerte encadenan las ondulaciones; los demás las rulan cómodamente. Primer contacto con el singletrack de Lesaka.
+              <div class="lr">
+                <a class="pill p-tf" href="https://www.trailforks.com/trails/mikeltxo/" target="_blank">📍 Trailforks</a>
               </div>
             </div>
           </div>
 
-          <div class="descent-item">
-            <div class="descent-header" onclick="tog(this)">
-              <div class="descent-name">Irasmendi ↓</div>
-              <div class="descent-stats">
-                <span class="descent-stat">1,3 km</span>
-                <span class="descent-stat">↓ 253 m</span>
-                <span class="descent-diff diff-azul">AZUL</span>
+          <div class="di">
+            <div class="dh" onclick="tog(this)">
+              <div class="dn2">Askati ↓</div>
+              <div class="dstats">
+                <span class="dstat">1,6 km</span>
+                <span class="dstat">↓ 351 m</span>
+                <span class="dstat">22% pte</span>
+                <span class="dstat">⭐ 4.4</span>
+                <span class="ddiff d-negra">NEGRA</span>
               </div>
-              <span class="descent-toggle">▾</span>
+              <span class="dtog">▾</span>
             </div>
-            <div class="descent-body">
-              Bajada fácil desde el collado de Agiña. Sendero bien trazado entre bosque con curvas suaves y ritmo constante. Sin dificultades técnicas — todo el grupo baja junto sin esperas. Perfecta para abrir piernas el primer día. Señalizada en campo.
-              <div class="link-row">
-                <a class="pill-tf" href="https://www.trailforks.com/trails/irasmendi/" target="_blank">📍 Trailforks — Irasmendi</a>
+            <div class="dbody">
+              El techo técnico del fin de semana. La bajada más nueva de Bizibide, creada con subvención de Orbea. Sin señalizar en campo — el GPX descargado ya lo lleva. Empieza en una cresta pronunciada (593 m) con vistas espectaculares de Lesaka. Tramo arbolado con saltos evitables. Sección de trialeras cerca de la regata — la parte más exigente. Con barro la dificultad sube considerablemente. Termina con zona fluida de mucho flow hasta los 242 m. Casco integral y protecciones recomendadas.
+              <div class="lr">
+                <a class="pill p-tf" href="https://www.trailforks.com/trails/askati/" target="_blank">📍 Trailforks</a>
+                <a class="pill p-yt" href="https://www.youtube.com/watch?v=LR6khSVh3h4" target="_blank">▶ Video RAW#12</a>
+                <a class="pill p-yt" href="https://www.youtube.com/results?search_query=Askati+Lesaka+MTB+enduro" target="_blank">▶ Más videos</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="di">
+            <div class="dh" onclick="tog(this)">
+              <div class="dn2">Pipiflow ↓</div>
+              <div class="dstats">
+                <span class="dstat">600 m</span>
+                <span class="dstat">↓ 104 m</span>
+                <span class="dstat">⭐ 4.3</span>
+                <span class="ddiff d-azul">AZUL</span>
+              </div>
+              <span class="dtog">▾</span>
+            </div>
+            <div class="dbody">
+              La bajada más rápida y fluida de Bizibide (4,3/5 en Trailforks). Bajada cronometrada de la carrera oficial. Singletrack en la zona Pipillu con berms y saltos encadenados — puro flow. ~4 minutos rodando. Sin señalizar en campo — el GPX ya lo lleva. Perfecto cierre del viernes: adrenalina fuera, flow dentro.
+              <div class="lr">
+                <a class="pill p-tf" href="https://www.trailforks.com/trails/pipiflow/" target="_blank">📍 Trailforks</a>
+                <a class="pill p-yt" href="https://www.youtube.com/results?search_query=Pipiflow+Lesaka+MTB" target="_blank">▶ Buscar video</a>
               </div>
             </div>
           </div>
@@ -289,93 +324,142 @@
     </div>
   </div>
 
-  <!-- ===== SÁBADO ===== -->
+  <!-- ======= SÁBADO ======= -->
   <div class="day">
-    <div class="day-label">Sábado<span>Jornada grande — mañana larga + tarde de bajadas puras</span></div>
+    <div class="day-label">Sábado 27 junio<span>Jornada grande — ruta enduro larga de mañana + Bike Park Bera por la tarde</span></div>
 
-    <!-- MAÑANA -->
-    <div class="route-card">
-      <div class="route-card-header">
+    <!-- MAÑANA: Enduro-3 -->
+    <div class="rc">
+      <div class="rc-hdr">
         <div>
-          <div class="route-title">Mañana: Ikatzbidea + Askati</div>
-          <div class="route-subtitle">Ruta larga con la bajada técnica del fin de semana · Comida en Lesaka a mediodía</div>
+          <div class="rc-title">Mañana — Ruta Enduro (3) · Ruta oficial Bizibide</div>
+          <div class="rc-sub">Iturria-Gardelko-Txabola · Izotzalde · Irasmendi · Zalainzoko · Iturrieder · Zigzag · GPX oficial</div>
         </div>
-        <span class="route-badge badge-red">🟠 ROJA</span>
+        <span class="badge b-black">⬛ NEGRA</span>
       </div>
-      <div class="stats-row">
-        <div class="stat"><div class="stat-val">~32 km</div><div class="stat-label">Distancia</div></div>
-        <div class="stat"><div class="stat-val">↑ ~1.200 m</div><div class="stat-label">Desnivel +</div></div>
-        <div class="stat"><div class="stat-val">↓ ~1.200 m</div><div class="stat-label">Desnivel −</div></div>
-        <div class="stat"><div class="stat-val">~4-5 h</div><div class="stat-label">Duración est.</div></div>
+      <div class="sr">
+        <div class="st"><div class="sv">~35–40 km</div><div class="sl">Distancia est.</div></div>
+        <div class="st"><div class="sv">↑ ~1.400 m</div><div class="sl">Desnivel +</div></div>
+        <div class="st"><div class="sv">↓ ~1.400 m</div><div class="sl">Desnivel −</div></div>
+        <div class="st"><div class="sv">~5-6 h</div><div class="sl">Duración est.</div></div>
       </div>
-      <div class="route-body">
-        <p class="route-desc">Ikatzbidea (30 km, 1.058 m oficial) con desvío para coger Askati, el techo técnico del fin de semana. Sube desde Lesaka por Matxitenea hasta Pagoieta en el límite con Artikutza. Las subidas de Lesaka no tienen respiro. Todo el grupo junto: los de ebike regulan asistencia para ir al ritmo de la bici muscular o esperan en lo alto.</p>
+      <div class="rb">
+        <p class="rdesc">La ruta más larga y exigente del fin de semana. Recorre la parte norte del municipio llegando hasta los puertos fronterizos. Las subidas de Lesaka son constantes y sin descanso — para los de ebike será un paseo con vistas, para la bici muscular el test definitivo. Todo el grupo junto: ebike regula asistencia o espera arriba.</p>
 
-        <a class="gpx-download" href="gpx/sabado_manana_askati_irasmendi_milkurbas.gpx" download>
-          <div class="gpx-download-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></div>
-          <div class="gpx-download-text">
-            <span class="gpx-download-name">GPX Sábado Mañana — Askati + Irasmendi + Mil Kurbas</span>
-            <span class="gpx-download-sub">Incluye waypoints de inicio de cada bajada · Coordenadas Askati verificadas</span>
-          </div>
-          <span class="gpx-download-btn">⬇ GPX</span>
+        <a class="gpx-btn" href="https://www.trailforks.com/route/enduro-3/" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Ver ruta en Trailforks · Enduro (3)
         </a>
 
-        <div class="descents-label">Bajadas de la mañana</div>
-        <div class="descent-list">
+        <div class="dl">Bajadas del sábado mañana</div>
+        <div class="dlist">
 
-          <div class="descent-item">
-            <div class="descent-header" onclick="tog(this)">
-              <div class="descent-name">Askati ↓</div>
-              <div class="descent-stats">
-                <span class="descent-stat">1,6 km</span>
-                <span class="descent-stat">↓ 347 m</span>
-                <span class="descent-stat">22% pte</span>
-                <span class="descent-stat">4.4 ★</span>
-                <span class="descent-diff diff-negra">NEGRA</span>
+          <div class="di">
+            <div class="dh" onclick="tog(this)">
+              <div class="dn2">Iturria-Gardelko-Txabola ↓</div>
+              <div class="dstats">
+                <span class="dstat">~2 km</span>
+                <span class="dstat">↓ ~104 m</span>
+                <span class="ddiff d-azul">AZUL</span>
               </div>
-              <span class="descent-toggle">▾</span>
+              <span class="dtog">▾</span>
             </div>
-            <div class="descent-body">
-              El techo técnico del fin de semana. La bajada más nueva de Bizibide, creada con subvención de Orbea. Empieza en una cresta pronunciada (593 m) con vistas espectaculares de Lesaka. Tramo arbolado con saltos evitables. La sección más exigente aparece cerca de la regata: varias trialeras que ponen a prueba el nivel. Con barro la dificultad sube considerablemente. Termina con zona fluida y mucho flow hasta los 242 m. Llevar casco integral y protecciones recomendadas.
-              <div class="link-row">
-                <a class="pill-tf" href="https://www.trailforks.com/trails/askati/" target="_blank">📍 Trailforks — Askati</a>
-                <a class="pill-yt" href="https://www.youtube.com/watch?v=LR6khSVh3h4" target="_blank">▶ Video Askati RAW#12</a>
+            <div class="dbody">
+              Bajada de apertura de la ruta. Recorre el tramo entre la fuente de Iturria y el collado de Gardelko hasta la txabola. Doubletrack con buena visibilidad, ritmo cómodo para entrar en calor. Señalizado y fácil de seguir.
+              <div class="lr">
+                <a class="pill p-tf" href="https://www.trailforks.com/trails/iturria-gardelko-txabola-508798/" target="_blank">📍 Trailforks</a>
               </div>
             </div>
           </div>
 
-          <div class="descent-item">
-            <div class="descent-header" onclick="tog(this)">
-              <div class="descent-name">Irasmendi ↓</div>
-              <div class="descent-stats">
-                <span class="descent-stat">1,3 km</span>
-                <span class="descent-stat">↓ 253 m</span>
-                <span class="descent-diff diff-azul">AZUL</span>
+          <div class="di">
+            <div class="dh" onclick="tog(this)">
+              <div class="dn2">Izotzalde ↓</div>
+              <div class="dstats">
+                <span class="dstat">~1,5 km</span>
+                <span class="dstat">↓ ~200 m</span>
+                <span class="ddiff d-roja">ROJA</span>
               </div>
-              <span class="descent-toggle">▾</span>
+              <span class="dtog">▾</span>
             </div>
-            <div class="descent-body">
-              Segunda pasada. Bajada fluida desde Agiña entre el bosque. Descanso activo entre bajadas técnicas — el grupo llega junto al siguiente punto.
-              <div class="link-row">
-                <a class="pill-tf" href="https://www.trailforks.com/trails/irasmendi/" target="_blank">📍 Trailforks — Irasmendi</a>
+            <div class="dbody">
+              Bajada media desde la zona de Izotzalde. Empieza por bosque y luego abre a zona más descubierta con mayor pendiente. Hay un tramo sobre losa de piedra al inicio — si no lo ves claro hay alternativa. Buen ritmo una vez pasado el inicio técnico.
+              <div class="lr">
+                <a class="pill p-tf" href="https://www.trailforks.com/trails/izotzalde/" target="_blank">📍 Trailforks</a>
               </div>
             </div>
           </div>
 
-          <div class="descent-item">
-            <div class="descent-header" onclick="tog(this)">
-              <div class="descent-name">Mil Kurbas ↓</div>
-              <div class="descent-stats">
-                <span class="descent-stat">~1,5 km</span>
-                <span class="descent-stat">↓ ~200 m</span>
-                <span class="descent-diff diff-azul">AZUL</span>
+          <div class="di">
+            <div class="dh" onclick="tog(this)">
+              <div class="dn2">Irasmendi ↓</div>
+              <div class="dstats">
+                <span class="dstat">1,3 km</span>
+                <span class="dstat">↓ 253 m</span>
+                <span class="ddiff d-azul">AZUL</span>
               </div>
-              <span class="descent-toggle">▾</span>
+              <span class="dtog">▾</span>
             </div>
-            <div class="descent-body">
-              Cierre de la mañana de vuelta a Lesaka. Como su nombre indica: curvas encadenadas sin parar desde Berrotaran hasta el pueblo. Sin obstáculos técnicos difíciles pero con trazado sinuoso constante. Llegas rodando hasta el restaurante con apetito.
-              <div class="link-row">
-                <a class="pill-tf" href="https://www.trailforks.com/trails/mil-kurbas/" target="_blank">📍 Trailforks — Mil Kurbas</a>
+            <div class="dbody">
+              Bajada fácil desde el collado de Agiña. Sendero entre bosque con curvas suaves y ritmo constante. Descanso activo entre las bajadas más técnicas — el grupo llega junto. Señalizada en campo.
+              <div class="lr">
+                <a class="pill p-tf" href="https://www.trailforks.com/trails/irasmendi/" target="_blank">📍 Trailforks</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="di">
+            <div class="dh" onclick="tog(this)">
+              <div class="dn2">Zalain Zoko ↓</div>
+              <div class="dstats">
+                <span class="dstat">1,6 km</span>
+                <span class="dstat">↓ 268 m</span>
+                <span class="dstat">⭐ 4.6</span>
+                <span class="ddiff d-roja">ROJA</span>
+              </div>
+              <span class="dtog">▾</span>
+            </div>
+            <div class="dbody">
+              La bajada mejor valorada de todo Bizibide (4,6/5 — la más puntuada del parque). Berms naturales construidos, curvas abiertas y secciones rápidas bordeando el Bidasoa. Segunda pasada después del viernes — con el trazado conocido sale mucho mejor. Candidata número uno a ser la favorita del grupo.
+              <div class="lr">
+                <a class="pill p-tf" href="https://www.trailforks.com/trails/zalainzoko/" target="_blank">📍 Trailforks</a>
+                <a class="pill p-yt" href="https://www.youtube.com/watch?v=4loAx5tGLqg" target="_blank">▶ Video Bizibide BTT</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="di">
+            <div class="dh" onclick="tog(this)">
+              <div class="dn2">Iturrieder ↓</div>
+              <div class="dstats">
+                <span class="dstat">~1,2 km</span>
+                <span class="dstat">↓ ~150 m</span>
+                <span class="ddiff d-azul">AZUL</span>
+              </div>
+              <span class="dtog">▾</span>
+            </div>
+            <div class="dbody">
+              Sendero de subida exclusivo para acceder a tramos superiores desde la regata. Tramo por media ladera sin apenas caja y con raíces. Azul oscura — más exigente de lo que parece en húmedo. Conecta con los tramos finales de la ruta.
+              <div class="lr">
+                <a class="pill p-tf" href="https://www.trailforks.com/trails/iturrieder/" target="_blank">📍 Trailforks</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="di">
+            <div class="dh" onclick="tog(this)">
+              <div class="dn2">Zigzag ↓</div>
+              <div class="dstats">
+                <span class="dstat">~1 km</span>
+                <span class="dstat">↓ ~120 m</span>
+                <span class="ddiff d-roja">ROJA</span>
+              </div>
+              <span class="dtog">▾</span>
+            </div>
+            <div class="dbody">
+              Bajada de cierre de la ruta Enduro (3) de vuelta hacia Lesaka. Trazado en zigzag por el que bajan las rutas de competición. Roja con buen ritmo, curvas pronunciadas y algún punto técnico. Buenas piernas al llegar aquí después de toda la mañana.
+              <div class="lr">
+                <a class="pill p-tf" href="https://www.trailforks.com/trails/zigzag-556626/" target="_blank">📍 Trailforks</a>
               </div>
             </div>
           </div>
@@ -384,73 +468,109 @@
       </div>
     </div>
 
-    <div class="pm-div">🍽 Parada a comer en Lesaka</div>
+    <div class="pmdiv">🍽 Parada a comer en Lesaka</div>
 
-    <!-- TARDE -->
-    <div class="route-card">
-      <div class="route-card-header">
+    <!-- TARDE: BIKE PARK BERA -->
+    <div class="rc">
+      <div class="rc-hdr">
         <div>
-          <div class="route-title">Tarde: Pipiflow + Zalain Zoko</div>
-          <div class="route-subtitle">Sesión de tarde — bajadas puras de flow · Circular corta todo el grupo junto</div>
+          <div class="rc-title">Tarde — Bike Park Bera · Komikaze · Pista Prest Dago · Patatal · Patatal 2</div>
+          <div class="rc-sub">Zona Ibardin / Bera · ~20 min en coche desde Lesaka · GPX oficial incluido</div>
         </div>
-        <span class="route-badge badge-red">🟠 ROJA</span>
+        <span class="badge b-purple">🟣 BIKE PARK</span>
       </div>
-      <div class="stats-row">
-        <div class="stat"><div class="stat-val">~14 km</div><div class="stat-label">Distancia</div></div>
-        <div class="stat"><div class="stat-val">↑ ~550 m</div><div class="stat-label">Desnivel +</div></div>
-        <div class="stat"><div class="stat-val">↓ ~550 m</div><div class="stat-label">Desnivel −</div></div>
-        <div class="stat"><div class="stat-val">~2 h</div><div class="stat-label">Duración est.</div></div>
+      <div class="sr">
+        <div class="st"><div class="sv">8,4 km</div><div class="sl">Distancia</div></div>
+        <div class="st"><div class="sv">↑ 663 m</div><div class="sl">Desnivel +</div></div>
+        <div class="st"><div class="sv">↓ 664 m</div><div class="sl">Desnivel −</div></div>
+        <div class="st"><div class="sv">427 m</div><div class="sl">Cota máx.</div></div>
       </div>
-      <div class="route-body">
-        <p class="route-desc">Circular de tarde encadenando las dos bajadas más fluidas y rítmicas del parque. Una sola subida por pista, todo el grupo junto, y dos bajadas seguidas. Con las piernas ya calientes del día es cuando más se disfrutan las bajadas de flow.</p>
+      <div class="rb">
+        <p class="rdesc">Cambio de escenario para la tarde: el Bike Park Bera, pionero del descenso MTB estatal desde 1995. Bajadas construidas con peraltes, mesetas y transiciones — muy diferente al enduro de Lesaka. Con los de ebike subiendo en minutos, el grupo puede repetir las bajadas que más gusten. Llevar el coche desde Lesaka (~20 min por N-121-A hacia Bera/Ibardin).</p>
 
-        <a class="gpx-download" href="gpx/sabado_tarde_pipiflow_zalainzoko.gpx" download>
-          <div class="gpx-download-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></div>
-          <div class="gpx-download-text">
-            <span class="gpx-download-name">GPX Sábado Tarde — Pipiflow + Zalain Zoko</span>
-            <span class="gpx-download-sub">Pipiflow sin señalizar en campo — imprescindible llevar este GPX</span>
-          </div>
-          <span class="gpx-download-btn">⬇ GPX</span>
+        <a class="gpx-btn" href="https://www.trailforks.com/ridelog/planner/view/689290" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Ver ruta en Trailforks #689290
+        </a>
+        <a class="gpx-btn-dl" href="lesaka-bikepark.gpx" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          ⬇ Descargar GPX Bike Park
         </a>
 
-        <div class="descents-label">Bajadas de la tarde</div>
-        <div class="descent-list">
+        <div class="dl">Bajadas del sábado tarde (repetibles)</div>
+        <div class="dlist">
 
-          <div class="descent-item">
-            <div class="descent-header" onclick="tog(this)">
-              <div class="descent-name">Pipiflow ↓</div>
-              <div class="descent-stats">
-                <span class="descent-stat">600 m</span>
-                <span class="descent-stat">↓ 104 m</span>
-                <span class="descent-stat">4.3 ★</span>
-                <span class="descent-diff diff-azul">AZUL</span>
+          <div class="di">
+            <div class="dh" onclick="tog(this)">
+              <div class="dn2">Komikaze ↓</div>
+              <div class="dstats">
+                <span class="dstat">~800 m</span>
+                <span class="dstat">↓ ~100 m</span>
+                <span class="ddiff d-negra">NEGRA</span>
               </div>
-              <span class="descent-toggle">▾</span>
+              <span class="dtog">▾</span>
             </div>
-            <div class="descent-body">
-              La bajada más rápida y fluida de Bizibide (4,3/5 en Trailforks). Bajada cronometrada de la carrera oficial. Singletrack en la zona Pipillu con berms y saltos encadenados — puro ritmo. Duración media rodando: ~4 minutos. No está señalizada en campo.
-              <div class="link-row">
-                <a class="pill-tf" href="https://www.trailforks.com/trails/pipiflow/" target="_blank">📍 Trailforks — Pipiflow</a>
-                <a class="pill-yt" href="https://www.youtube.com/watch?v=4loAx5tGLqg" target="_blank">▶ Video Bizibide BTT</a>
+            <div class="dbody">
+              La bajada más técnica del Bike Park Bera. Nombre muy descriptivo. Para riders que ya hayan rodado el bike park antes — no es una bajada para estrenar. Si la roja sale bien, se sube a la negra. Parte alta del parque con mayor exposición.
+              <div class="lr">
+                <a class="pill p-tf" href="https://www.trailforks.com/trails/komikaze-846014/" target="_blank">📍 Trailforks</a>
               </div>
             </div>
           </div>
 
-          <div class="descent-item">
-            <div class="descent-header" onclick="tog(this)">
-              <div class="descent-name">Zalain Zoko ↓</div>
-              <div class="descent-stats">
-                <span class="descent-stat">1,6 km</span>
-                <span class="descent-stat">↓ 268 m</span>
-                <span class="descent-stat">4.6 ★</span>
-                <span class="descent-diff diff-roja">ROJA</span>
+          <div class="di">
+            <div class="dh" onclick="tog(this)">
+              <div class="dn2">Pista Prest Dago ↓</div>
+              <div class="dstats">
+                <span class="dstat">908 m</span>
+                <span class="dstat">↓ 106 m</span>
+                <span class="dstat">11,7% pte</span>
+                <span class="ddiff d-roja">ROJA</span>
               </div>
-              <span class="descent-toggle">▾</span>
+              <span class="dtog">▾</span>
             </div>
-            <div class="descent-body">
-              Segunda pasada del fin de semana. Con las piernas completamente sueltas y el trazado conocido del viernes, es cuando más sale el ritmo. Berms, curvas abiertas y flow hasta el barrio.
-              <div class="link-row">
-                <a class="pill-tf" href="https://www.trailforks.com/trails/zalainzoko/" target="_blank">📍 Trailforks — Zalain Zoko</a>
+            <div class="dbody">
+              La bajada histórica que dio nombre al famoso vídeo que puso Bera en el mapa del MTB estatal en 1995. Bajada machine groomed con peraltes y mesetas bien construidas. Moderada — perfecta para repetir varias veces y ganar velocidad en cada pasada. Trailhead en 43.30235, -1.69598.
+              <div class="lr">
+                <a class="pill p-tf" href="https://www.trailforks.com/trails/pista-prest-dago/" target="_blank">📍 Trailforks</a>
+                <a class="pill p-yt" href="https://www.youtube.com/results?search_query=Pista+Prest+Dago+Bera+MTB" target="_blank">▶ Video histórico</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="di">
+            <div class="dh" onclick="tog(this)">
+              <div class="dn2">Patatal ↓</div>
+              <div class="dstats">
+                <span class="dstat">~500 m</span>
+                <span class="dstat">↓ ~60 m</span>
+                <span class="ddiff d-azul">AZUL</span>
+              </div>
+              <span class="dtog">▾</span>
+            </div>
+            <div class="dbody">
+              Bajada azul del bike park con peraltes enormes y transiciones. Recomendable empezar por aquí antes de la roja — menos pendiente, más fácil enlazar los saltos. Los jump gaps son rodables sin velocidad mínima. Muy popular: 172 ridelogs registrados.
+              <div class="lr">
+                <a class="pill p-tf" href="https://www.trailforks.com/trails/patatal/" target="_blank">📍 Trailforks</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="di">
+            <div class="dh" onclick="tog(this)">
+              <div class="dn2">Patatal 2 ↓</div>
+              <div class="dstats">
+                <span class="dstat">142 m</span>
+                <span class="dstat">↓ 19 m</span>
+                <span class="dstat">12,5% pte</span>
+                <span class="ddiff d-roja">ROJA</span>
+              </div>
+              <span class="dtog">▾</span>
+            </div>
+            <div class="dbody">
+              La roja del bike park. Más pendiente y saltos más grandes que la azul — más fácil enlazarlos con velocidad. Muy escarpada, singletrack puro. Votada por riders como negra de facto. Secuencia recomendada: empezar por Patatal azul → subir → Patatal 2 roja → subir → repetir. Trailhead en 43.28452, -1.69283.
+              <div class="lr">
+                <a class="pill p-tf" href="https://www.trailforks.com/trails/patatal-2/" target="_blank">📍 Trailforks</a>
               </div>
             </div>
           </div>
@@ -460,152 +580,64 @@
     </div>
   </div>
 
-  <!-- ===== DOMINGO ===== -->
+  <!-- ======= DOMINGO ======= -->
   <div class="day">
-    <div class="day-label">Domingo<span>Cierre — salida 8:00 · Fin ruta ~11:00 · Madrid antes de las 19:00</span></div>
+    <div class="day-label">Domingo 28 junio<span>Ruta a improvisar · Salida 8:00 · Ducha + termal + comida + Madrid</span></div>
 
-    <div class="route-card">
-      <div class="route-card-header">
-        <div>
-          <div class="route-title">Circuito de competición: Askati + Mikeltxo + Pipiflow</div>
-          <div class="route-subtitle">Las tres bajadas de la carrera oficial Bizibide Enduro · Salida 8:00</div>
-        </div>
-        <span class="route-badge badge-red">🟠 ROJA</span>
-      </div>
-      <div class="stats-row">
-        <div class="stat"><div class="stat-val">~20 km</div><div class="stat-label">Distancia</div></div>
-        <div class="stat"><div class="stat-val">↑ ~750 m</div><div class="stat-label">Desnivel +</div></div>
-        <div class="stat"><div class="stat-val">↓ ~750 m</div><div class="stat-label">Desnivel −</div></div>
-        <div class="stat"><div class="stat-val">~3 h</div><div class="stat-label">Duración est.</div></div>
-      </div>
-      <div class="route-body">
-        <p class="route-desc">Cierre del fin de semana con las tres bajadas del circuito oficial. Askati ya con el trazado memorizado del sábado — sale notablemente mejor. Mikeltxo como enlace natural. Pipiflow para despedirse con buen sabor de boca.</p>
-
-        <a class="gpx-download" href="gpx/domingo_askati_mikeltxo_pipiflow.gpx" download>
-          <div class="gpx-download-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></div>
-          <div class="gpx-download-text">
-            <span class="gpx-download-name">GPX Domingo — Askati + Mikeltxo + Pipiflow</span>
-            <span class="gpx-download-sub">Askati y Pipiflow sin señalizar en campo — imprescindible llevar este GPX</span>
-          </div>
-          <span class="gpx-download-btn">⬇ GPX</span>
-        </a>
-
-        <div class="descents-label">Bajadas del domingo</div>
-        <div class="descent-list">
-
-          <div class="descent-item">
-            <div class="descent-header" onclick="tog(this)">
-              <div class="descent-name">Askati ↓</div>
-              <div class="descent-stats">
-                <span class="descent-stat">1,6 km</span>
-                <span class="descent-stat">↓ 347 m</span>
-                <span class="descent-stat">22% pte</span>
-                <span class="descent-stat">4.4 ★</span>
-                <span class="descent-diff diff-negra">NEGRA</span>
-              </div>
-              <span class="descent-toggle">▾</span>
-            </div>
-            <div class="descent-body">
-              Segunda vez — con el trazado memorizado del sábado sale mucho mejor. Apertura del domingo con adrenalina. El techo del fin de semana que ya no sorprende. No señalizada en campo.
-              <div class="link-row">
-                <a class="pill-tf" href="https://www.trailforks.com/trails/askati/" target="_blank">📍 Trailforks — Askati</a>
-                <a class="pill-yt" href="https://www.youtube.com/watch?v=LR6khSVh3h4" target="_blank">▶ Video Askati RAW#12</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="descent-item">
-            <div class="descent-header" onclick="tog(this)">
-              <div class="descent-name">Mikeltxo ↓</div>
-              <div class="descent-stats">
-                <span class="descent-stat">910 m</span>
-                <span class="descent-stat">↓ 174 m</span>
-                <span class="descent-diff diff-azul">AZUL</span>
-              </div>
-              <span class="descent-toggle">▾</span>
-            </div>
-            <div class="descent-body">
-              Circuito en la zona Mikel Gorri entre Askati y Pipiflow. Acceso: salir de Askati, cruzar la segunda pista forestal + paso canadiense (~200 m). Trazado sinuoso con ondulaciones constantes para todos los niveles. Los que van fuerte encadenan las ondulaciones; los demás las rulan sin dificultad.
-              <div class="link-row">
-                <a class="pill-tf" href="https://www.trailforks.com/trails/mikeltxo/" target="_blank">📍 Trailforks — Mikeltxo</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="descent-item">
-            <div class="descent-header" onclick="tog(this)">
-              <div class="descent-name">Pipiflow ↓</div>
-              <div class="descent-stats">
-                <span class="descent-stat">600 m</span>
-                <span class="descent-stat">↓ 104 m</span>
-                <span class="descent-stat">4.3 ★</span>
-                <span class="descent-diff diff-azul">AZUL</span>
-              </div>
-              <span class="descent-toggle">▾</span>
-            </div>
-            <div class="descent-body">
-              El mejor cierre posible. La bajada más fluida y rápida de Lesaka para despedirse con buen sabor de boca. Berms, saltos y ritmo puro. Segunda pasada — con el trazado conocido del sábado sale sola. No señalizada en campo.
-              <div class="link-row">
-                <a class="pill-tf" href="https://www.trailforks.com/trails/pipiflow/" target="_blank">📍 Trailforks — Pipiflow</a>
-                <a class="pill-yt" href="https://www.youtube.com/watch?v=4loAx5tGLqg" target="_blank">▶ Video Bizibide BTT</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- TIMELINE DOMINGO -->
-        <div style="margin-top:1rem;">
-          <div class="descents-label">Plan del domingo</div>
-          <div class="timeline">
-            <div class="tl-item"><strong>8:00</strong>Salida ruta</div>
-            <div class="tl-item"><strong>~11:00</strong>Fin ruta</div>
-            <div class="tl-item"><strong>11–12:30</strong>Ducha + termal</div>
-            <div class="tl-item"><strong>12:30–13:30</strong>Comida</div>
-            <div class="tl-item"><strong>~14:00</strong>Salida Madrid</div>
-            <div class="tl-item"><strong>~18:30</strong>Madrid</div>
-          </div>
-        </div>
+    <div class="impbox">
+      <div class="ico">🎲</div>
+      <h3>Ruta decidida el domingo según favoritas</h3>
+      <p>El domingo se elige en el desayuno según qué bajadas han enganchado más. La única regla: salir a las 8:00 para tener tiempo de todo antes de las 14:00. Candidatas según lo que suele arrasar en grupos de este nivel:</p>
+      <div class="imp-trails">
+        <a class="pill p-tf" href="https://www.trailforks.com/trails/zalainzoko/" target="_blank">📍 Zalain Zoko ⭐4.6</a>
+        <a class="pill p-tf" href="https://www.trailforks.com/trails/askati/" target="_blank">📍 Askati ⭐4.4</a>
+        <a class="pill p-tf" href="https://www.trailforks.com/trails/pipiflow/" target="_blank">📍 Pipiflow ⭐4.3</a>
+        <a class="pill p-tf" href="https://www.trailforks.com/trails/patatal-2/" target="_blank">📍 Patatal 2</a>
+        <a class="pill p-tf" href="https://www.trailforks.com/trails/pista-prest-dago/" target="_blank">📍 Pista Prest Dago</a>
+        <a class="pill p-tf" href="https://www.trailforks.com/trails/mikeltxo/" target="_blank">📍 Mikeltxo</a>
+        <a class="pill p-tf" href="https://www.trailforks.com/region/bera-lesaka/" target="_blank">🗺 Mapa completo Bera/Lesaka</a>
       </div>
     </div>
 
-    <!-- POLIDEPORTIVO -->
     <div class="poli">
       <div class="poli-hdr">
         <div style="font-size:22px">🚿</div>
         <div>
-          <div class="poli-title">Polideportivo Municipal de Lesaka</div>
-          <div class="poli-sub">Komentu kalea 2 · 948 63 74 00 · lesakakoudalkiroldegia.eus · Abre a las 9:00</div>
+          <div class="poli-title">Polideportivo Municipal de Lesaka — Después de la última ruta</div>
+          <div class="poli-sub">Komentu kalea 2 · 948 63 74 00 · Abre a las 9:00 · 5 min andando del Duplex Frain</div>
         </div>
       </div>
       <div class="poli-body">
-        <p style="font-size:13px;color:var(--gray-700);margin-bottom:12px;">Termináis la ruta sobre las 11:00. Tenéis 1,5 horas para ducha y zona termal antes de comer — sin prisas. La zona termal el domingo por la mañana suele estar tranquila.</p>
-        <div class="poli-grid">
-          <div class="poli-item"><strong>Duchas y vestuarios</strong>5 € por persona</div>
-          <div class="poli-item"><strong>Zona termal</strong>8 € · sauna, jacuzzi, turca, pediluvio</div>
-          <div class="poli-item"><strong>Lavado bicis</strong>Gratuito (manguera exterior)</div>
-          <div class="poli-item"><strong>Autoreparación</strong>Gratuito</div>
-          <div class="poli-item"><strong>Guardabicis</strong>5 € (llave en recepción)</div>
-          <div class="poli-item"><strong>Aparcamiento</strong>Gratuito</div>
+        <p style="font-size:13px;color:var(--gray-700);margin-bottom:12px;">Termináis la ruta sobre las 11:00. Casi dos horas para ducha, zona termal y comida tranquila antes de salir a Madrid.</p>
+        <div class="pg">
+          <div class="pi"><strong>Duchas y vestuarios</strong>5 € por persona</div>
+          <div class="pi"><strong>Zona termal</strong>8 € · sauna, jacuzzi, turca, pediluvio</div>
+          <div class="pi"><strong>Lavado bicis</strong>Gratuito (manguera exterior)</div>
+          <div class="pi"><strong>Autoreparación</strong>Gratuito</div>
+          <div class="pi"><strong>Guardabicis</strong>5 € (llave en recepción)</div>
+          <div class="pi"><strong>Aparcamiento</strong>Gratuito</div>
         </div>
-        <div class="sello">
-          💡 <strong>Truco Sello Bizibide — recupera el coste:</strong> Al pagar en el polideportivo (ducha 5€ o termal 8€) recibes un vale del mismo importe para gastar en bares y restaurantes adheridos al sello Bizibide. Si coméis en uno de ellos, la ducha y la termal os salen gratis. Preguntad en recepción qué locales participan.
-        </div>
-        <div class="map-label" style="margin-top:12px;">Polideportivo — ubicación</div>
-        <div class="map-wrap">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1200!2d-1.7574!3d43.2567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd51b08b2a12a901%3A0x5b5b5b5b5b5b5b5b!2sPolideportivo%20Municipal%20de%20Lesaka!5e0!3m2!1ses!2ses!4v1700000000000" allowfullscreen loading="lazy"></iframe>
+        <div class="sello">💡 <strong>Truco Sello Bizibide:</strong> Al pagar en el polideportivo (ducha 5€ o termal 8€) recibes un vale del mismo importe para gastar en bares y restaurantes Bizibide. Si coméis en uno, la ducha y la termal os salen gratis. Preguntad en recepción qué locales participan.</div>
+        <div style="margin-top:12px;">
+          <div class="dl">Plan del domingo</div>
+          <div class="tl">
+            <div class="tli"><strong>8:00</strong>Salida</div>
+            <div class="tli"><strong>~11:00</strong>Fin ruta</div>
+            <div class="tli"><strong>11–12:30</strong>Ducha + termal</div>
+            <div class="tli"><strong>12:30–13:30</strong>Comida</div>
+            <div class="tli"><strong>~14:00</strong>Salida Madrid</div>
+            <div class="tli"><strong>~18:30</strong>Madrid</div>
+          </div>
         </div>
       </div>
     </div>
-
   </div>
 
-  <!-- NOTAS -->
-  <div class="info yellow">
-    <strong>⚠️ Pipiflow y Askati no están señalizadas en campo.</strong> Llevar los GPX cargados en el GPS o el móvil (Komoot, Wikiloc, Garmin Connect). Descargar antes de salir de Madrid.
+  <div class="info y">
+    <strong>⚠️ Askati y Pipiflow sin señalizar en campo.</strong> Los GPX descargados los incluyen. El resto de bajadas están señalizadas pero siempre recomendable llevar el track cargado en el móvil o GPS.
   </div>
-  <div class="info green" style="margin-top:8px;">
-    <strong>🚵 Grupo unido todo el rato:</strong> Los de ebike regulan asistencia para subir al ritmo de la bici muscular, o esperan en el alto. En bajadas vais todos juntos — es lo que importa. En rampas muy empinadas, tow rope para mantener el grupo.
+  <div class="info g" style="margin-top:8px;">
+    <strong>🚵 Grupo unido todo el rato.</strong> Ebike regula asistencia para subir al ritmo de la bici muscular, o espera en el alto. En bajadas todos juntos. Tow rope en rampas muy empinadas si hace falta.
   </div>
 
 </div>
@@ -613,18 +645,19 @@
 <footer>
   Bizibide Lesaka · <a href="https://www.bizibide.eus" target="_blank">bizibide.eus</a> ·
   Trailforks: <a href="https://www.trailforks.com/region/bera-lesaka/" target="_blank">Bera/Lesaka</a> ·
+  Bike Park Bera: <a href="https://www.trailforks.com/region/bera-lesaka/" target="_blank">Trailforks</a> ·
+  Alojamiento: <a href="https://www.booking.com/hotel/es/duplex-frain.es.html" target="_blank">Duplex Frain</a> ·
   Polideportivo: <a href="https://www.lesakakoudalkiroldegia.eus" target="_blank">lesakakoudalkiroldegia.eus</a>
 </footer>
 
 <script>
 function tog(h){
-  const b=h.nextElementSibling,t=h.querySelector('.descent-toggle'),o=b.classList.contains('open');
+  const b=h.nextElementSibling,t=h.querySelector('.dtog'),o=b.classList.contains('open');
   b.classList.toggle('open',!o);t.classList.toggle('open',!o);
 }
-function toggleMadrid(){
-  const b=document.getElementById('madrid-body'),a=document.getElementById('madrid-arrow'),o=b.classList.contains('open');
-  b.classList.toggle('open',!o);
-  a.textContent=o?'VER ▾':'OCULTAR ▴';
+function tog2(id){
+  const b=document.getElementById(id+'-b'),a=document.getElementById(id+'-a'),o=b.classList.contains('open');
+  b.classList.toggle('open',!o);a.classList.toggle('open',!o);
 }
 </script>
 </body>
