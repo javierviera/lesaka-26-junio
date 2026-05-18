@@ -143,6 +143,30 @@
     .tli{border-right:none;border-bottom:1px solid rgba(27,79,114,.1);}
     .tli:first-child{border-radius:8px 8px 0 0;}.tli:last-child{border-radius:0 0 8px 8px;}
   }
+
+  /* RESTAURANTES */
+  .resto-section{margin-top:2.5rem;padding-top:1.5rem;border-top:2px solid var(--border);}
+  .resto-section-title{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:.04em;color:var(--gray-900);margin-bottom:4px;}
+  .resto-section-sub{font-size:13px;color:var(--gray-400);margin-bottom:1.25rem;}
+  .resto-tabs{display:flex;gap:8px;margin-bottom:1.25rem;flex-wrap:wrap;}
+  .resto-tab{font-size:12px;font-weight:500;padding:5px 14px;border-radius:100px;border:1.5px solid var(--border);background:var(--white);color:var(--gray-400);cursor:pointer;transition:all .15s;}
+  .resto-tab.active{background:var(--gray-900);color:var(--white);border-color:var(--gray-900);}
+  .resto-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .resto-panel{display:none;}.resto-panel.active{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .resto-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:12px 14px;}
+  .resto-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:6px;}
+  .resto-name{font-size:14px;font-weight:500;color:var(--gray-900);}
+  .resto-rating{font-size:11px;font-weight:700;background:var(--green-pale);color:var(--green);padding:2px 7px;border-radius:100px;white-space:nowrap;flex-shrink:0;}
+  .resto-type{font-size:11px;color:var(--gray-400);margin-bottom:5px;}
+  .resto-desc{font-size:12px;color:var(--gray-700);line-height:1.55;margin-bottom:8px;}
+  .resto-tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px;}
+  .resto-tag{font-size:10px;font-weight:500;padding:2px 7px;border-radius:100px;background:var(--gray-50);border:1px solid var(--border);color:var(--gray-700);}
+  .resto-tag.cuando{background:var(--amber-pale);border-color:rgba(231,111,0,.2);color:var(--amber);}
+  .resto-link{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:500;color:var(--blue);text-decoration:none;background:var(--blue-pale);padding:3px 9px;border-radius:100px;}
+  .resto-link:hover{opacity:.75;}
+  .resto-note{background:var(--amber-pale);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:10px 14px;font-size:12.5px;color:var(--gray-700);line-height:1.6;margin-top:12px;}
+  @media(max-width:520px){.resto-panel.active{grid-template-columns:1fr;}}
+
 </style>
 </head>
 <body>
@@ -205,13 +229,13 @@
         </div>
         <div class="dc">
           <h4>🔴 VUELTA — Domingo 28 junio</h4>
-          <p class="ds"><strong>8:00</strong> Salida ruta domingo</p>
-          <p class="ds"><strong>~11:00</strong> Fin ruta · Polideportivo</p>
-          <p class="ds"><strong>11:00–12:30</strong> Ducha + zona termal</p>
-          <p class="ds"><strong>12:30–13:30</strong> Comida en Lesaka</p>
-          <p class="ds"><strong>~14:00</strong> Salida hacia Madrid</p>
-          <p class="ds"><strong>~18:30–19:00</strong> Llegada Madrid</p>
-          <p class="dn">Con salida 14:00 llegas a Madrid antes de las 19:00</p>
+          <p class="ds"><strong>9:00</strong> Salida ruta domingo</p>
+          <p class="ds"><strong>~12:00</strong> Fin ruta · Polideportivo</p>
+          <p class="ds"><strong>12:00–13:30</strong> Ducha + zona termal</p>
+          <p class="ds"><strong>13:30–14:30</strong> Comida en Lesaka</p>
+          <p class="ds"><strong>~15:00</strong> Salida hacia Madrid</p>
+          <p class="ds"><strong>~19:30</strong> Llegada Madrid</p>
+          <p class="dn">Con salida 15:00 llegáis a Madrid antes de las 20:00</p>
         </div>
       </div>
       <div class="dc">
@@ -234,15 +258,15 @@
       <div class="rc-hdr">
         <div>
           <div class="rc-title">Ruta Viernes — Mikeltxo · Askati · Pipiflow</div>
-          <div class="rc-sub">GPX oficial Trailforks · Salida desde polideportivo Lesaka</div>
+          <div class="rc-sub">Route Plan: LesakaCorta · Trails: Urraba + Mikeltxo + Askati + Pipiflow · Salida polideportivo</div>
         </div>
         <span class="badge b-black">⬛ NEGRA</span>
       </div>
       <div class="sr">
         <div class="st"><div class="sv">16,5 km</div><div class="sl">Distancia</div></div>
-        <div class="st"><div class="sv">↑ 1.326 m</div><div class="sl">Desnivel +</div></div>
-        <div class="st"><div class="sv">↓ 1.326 m</div><div class="sl">Desnivel −</div></div>
-        <div class="st"><div class="sv">563 m</div><div class="sl">Cota máx.</div></div>
+        <div class="st"><div class="sv">↑ 789 m</div><div class="sl">Desnivel +</div></div>
+        <div class="st"><div class="sv">↓ 789 m</div><div class="sl">Desnivel −</div></div>
+        <div class="st"><div class="sv">604 m</div><div class="sl">Cota máx.</div></div>
       </div>
       <div class="rb">
         <p class="rdesc">Primera ruta del fin de semana. Llegáis de Madrid, dejáis maletas en el Duplex Frain y salís a rodar a las 13:30. Tres bajadas de primer nivel para conocer el terreno: Mikeltxo para calentar, Askati como plato fuerte y Pipiflow para cerrar con flow. Todo el grupo junto siempre.</p>
@@ -273,6 +297,7 @@
               Circuito en la zona Mikel Gorri entre Askati y Pipiflow. Primera bajada del fin de semana — ideal para calentar. Trazado sinuoso con ondulaciones para todos los niveles. Los que van fuerte encadenan las ondulaciones; los demás las rulan cómodamente. Primer contacto con el singletrack de Lesaka.
               <div class="lr">
                 <a class="pill p-tf" href="https://www.trailforks.com/trails/mikeltxo/" target="_blank">📍 Trailforks</a>
+                <a class="pill p-yt" href="https://www.youtube.com/watch?v=gMUh2Ltov5A" target="_blank">▶ Mikeltxo Enduro Lesaka</a>
               </div>
             </div>
           </div>
@@ -314,7 +339,7 @@
               La bajada más rápida y fluida de Bizibide (4,3/5 en Trailforks). Bajada cronometrada de la carrera oficial. Singletrack en la zona Pipillu con berms y saltos encadenados — puro flow. ~4 minutos rodando. Sin señalizar en campo — el GPX ya lo lleva. Perfecto cierre del viernes: adrenalina fuera, flow dentro.
               <div class="lr">
                 <a class="pill p-tf" href="https://www.trailforks.com/trails/pipiflow/" target="_blank">📍 Trailforks</a>
-                <a class="pill p-yt" href="https://www.youtube.com/results?search_query=Pipiflow+Lesaka+MTB" target="_blank">▶ Buscar video</a>
+                <a class="pill p-yt" href="https://www.youtube.com/results?search_query=Pipiflow+Lesaka+MTB+enduro" target="_blank">▶ Buscar video Pipiflow</a>
               </div>
             </div>
           </div>
@@ -333,15 +358,15 @@
       <div class="rc-hdr">
         <div>
           <div class="rc-title">Mañana — Ruta Enduro (3) · Ruta oficial Bizibide</div>
-          <div class="rc-sub">Iturria-Gardelko-Txabola · Izotzalde · Irasmendi · Zalainzoko · Iturrieder · Zigzag · GPX oficial</div>
+          <div class="rc-sub">Ruta oficial Bizibide Enduro (3) · Datos: bizibide.eus · Descarga GPX en Trailforks o bizibide.eus</div>
         </div>
         <span class="badge b-black">⬛ NEGRA</span>
       </div>
       <div class="sr">
-        <div class="st"><div class="sv">~35–40 km</div><div class="sl">Distancia est.</div></div>
-        <div class="st"><div class="sv">↑ ~1.400 m</div><div class="sl">Desnivel +</div></div>
-        <div class="st"><div class="sv">↓ ~1.400 m</div><div class="sl">Desnivel −</div></div>
-        <div class="st"><div class="sv">~5-6 h</div><div class="sl">Duración est.</div></div>
+        <div class="st"><div class="sv">23,5 km</div><div class="sl">Distancia</div></div>
+        <div class="st"><div class="sv">↑ 882 m</div><div class="sl">Desnivel +</div></div>
+        <div class="st"><div class="sv">↓ 882 m</div><div class="sl">Desnivel −</div></div>
+        <div class="st"><div class="sv">~3h 30min</div><div class="sl">Duración of.</div></div>
       </div>
       <div class="rb">
         <p class="rdesc">La ruta más larga y exigente del fin de semana. Recorre la parte norte del municipio llegando hasta los puertos fronterizos. Las subidas de Lesaka son constantes y sin descanso — para los de ebike será un paseo con vistas, para la bici muscular el test definitivo. Todo el grupo junto: ebike regula asistencia o espera arriba.</p>
@@ -423,7 +448,7 @@
               La bajada mejor valorada de todo Bizibide (4,6/5 — la más puntuada del parque). Berms naturales construidos, curvas abiertas y secciones rápidas bordeando el Bidasoa. Segunda pasada después del viernes — con el trazado conocido sale mucho mejor. Candidata número uno a ser la favorita del grupo.
               <div class="lr">
                 <a class="pill p-tf" href="https://www.trailforks.com/trails/zalainzoko/" target="_blank">📍 Trailforks</a>
-                <a class="pill p-yt" href="https://www.youtube.com/watch?v=4loAx5tGLqg" target="_blank">▶ Video Bizibide BTT</a>
+                <a class="pill p-yt" href="https://www.youtube.com/results?search_query=Zalain+Zoko+Lesaka+MTB+enduro" target="_blank">▶ Buscar video Zalain Zoko</a>
               </div>
             </div>
           </div>
@@ -475,15 +500,15 @@
       <div class="rc-hdr">
         <div>
           <div class="rc-title">Tarde — Bike Park Bera · Komikaze · Pista Prest Dago · Patatal · Patatal 2</div>
-          <div class="rc-sub">Zona Ibardin / Bera · ~20 min en coche desde Lesaka · GPX oficial incluido</div>
+          <div class="rc-sub">Route Plan: Lasaka bikepark · Trails: Kalbario · Ubaraneta · Acceso Ubaraneta · Acceso Rápido por Volcán · ~20 min de Lesaka</div>
         </div>
         <span class="badge b-purple">🟣 BIKE PARK</span>
       </div>
       <div class="sr">
-        <div class="st"><div class="sv">8,4 km</div><div class="sl">Distancia</div></div>
-        <div class="st"><div class="sv">↑ 663 m</div><div class="sl">Desnivel +</div></div>
-        <div class="st"><div class="sv">↓ 664 m</div><div class="sl">Desnivel −</div></div>
-        <div class="st"><div class="sv">427 m</div><div class="sl">Cota máx.</div></div>
+        <div class="st"><div class="sv">8,5 km</div><div class="sl">Distancia</div></div>
+        <div class="st"><div class="sv">↑ 513 m</div><div class="sl">Desnivel +</div></div>
+        <div class="st"><div class="sv">↓ 513 m</div><div class="sl">Desnivel −</div></div>
+        <div class="st"><div class="sv">458 m</div><div class="sl">Cota máx.</div></div>
       </div>
       <div class="rb">
         <p class="rdesc">Cambio de escenario para la tarde: el Bike Park Bera, pionero del descenso MTB estatal desde 1995. Bajadas construidas con peraltes, mesetas y transiciones — muy diferente al enduro de Lesaka. Con los de ebike subiendo en minutos, el grupo puede repetir las bajadas que más gusten. Llevar el coche desde Lesaka (~20 min por N-121-A hacia Bera/Ibardin).</p>
@@ -533,7 +558,9 @@
               La bajada histórica que dio nombre al famoso vídeo que puso Bera en el mapa del MTB estatal en 1995. Bajada machine groomed con peraltes y mesetas bien construidas. Moderada — perfecta para repetir varias veces y ganar velocidad en cada pasada. Trailhead en 43.30235, -1.69598.
               <div class="lr">
                 <a class="pill p-tf" href="https://www.trailforks.com/trails/pista-prest-dago/" target="_blank">📍 Trailforks</a>
-                <a class="pill p-yt" href="https://www.youtube.com/results?search_query=Pista+Prest+Dago+Bera+MTB" target="_blank">▶ Video histórico</a>
+                <a class="pill p-yt" href="https://www.youtube.com/watch?v=glOj7cp7Q0E" target="_blank">▶ Pista Prest Dago HD</a>
+                <a class="pill p-yt" href="https://www.youtube.com/watch?v=tOYS9w72kZU" target="_blank">▶ Pista Prest Dago – FASTFOKUS</a>
+                <a class="pill p-yt" href="https://www.youtube.com/watch?v=fEx--ZxH-zc" target="_blank">▶ Downhill VTT Pays Basque</a>
               </div>
             </div>
           </div>
@@ -582,7 +609,7 @@
 
   <!-- ======= DOMINGO ======= -->
   <div class="day">
-    <div class="day-label">Domingo 28 junio<span>Ruta a improvisar · Salida 8:00 · Ducha + termal + comida + Madrid</span></div>
+    <div class="day-label">Domingo 28 junio<span>Ruta a improvisar · Salida 9:00 · Ducha + termal + comida + Madrid</span></div>
 
     <div class="impbox">
       <div class="ico">🎲</div>
@@ -621,24 +648,237 @@
         <div style="margin-top:12px;">
           <div class="dl">Plan del domingo</div>
           <div class="tl">
-            <div class="tli"><strong>8:00</strong>Salida</div>
-            <div class="tli"><strong>~11:00</strong>Fin ruta</div>
-            <div class="tli"><strong>11–12:30</strong>Ducha + termal</div>
-            <div class="tli"><strong>12:30–13:30</strong>Comida</div>
-            <div class="tli"><strong>~14:00</strong>Salida Madrid</div>
-            <div class="tli"><strong>~18:30</strong>Madrid</div>
+            <div class="tli"><strong>9:00</strong>Salida</div>
+            <div class="tli"><strong>~12:00</strong>Fin ruta</div>
+            <div class="tli"><strong>12–13:30</strong>Ducha + termal</div>
+            <div class="tli"><strong>13:30–14:30</strong>Comida</div>
+            <div class="tli"><strong>~15:00</strong>Salida Madrid</div>
+            <div class="tli"><strong>~19:30</strong>Madrid</div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
+
+  <!-- ======= RESTAURANTES ======= -->
+  <div class="resto-section">
+    <div class="resto-section-title">🍽 Dónde comer y cenar</div>
+    <div class="resto-section-sub">Lesaka · Tripadvisor + fuentes locales · Llamad antes si vais en grupo de 5</div>
+
+    <div class="resto-tabs">
+      <button class="resto-tab active" onclick="togResto('cena', this)">🌙 Cenas</button>
+      <button class="resto-tab" onclick="togResto('comida', this)">☀️ Comidas mediodía</button>
+      <button class="resto-tab" onclick="togResto('bar', this)">🍺 Pintxos y bocatas</button>
+    </div>
+
+    <!-- CENAS -->
+    <div class="resto-panel active" id="resto-cena">
+
+      <div class="resto-card">
+        <div class="resto-top">
+          <div class="resto-name">Sidrería Lindurrenborda</div>
+          <span class="resto-rating">⭐ 4.3</span>
+        </div>
+        <div class="resto-type">Sidrería · Asador · Cocina navarra · €€</div>
+        <div class="resto-desc">La opción más especial para una cena de grupo. Sidrería con elaboración propia, txuleta espectacular que se deshace en la boca, tortilla de bacalao y bacalao de primera. Vistas preciosas. Menú de sidrería personalizable. A 300 m del casco antiguo.</div>
+        <div class="resto-tags">
+          <span class="resto-tag cuando">Viernes o sábado noche</span>
+          <span class="resto-tag">Grupo grande</span>
+          <span class="resto-tag">Sidra propia</span>
+          <span class="resto-tag">Txuleta</span>
+        </div>
+        <a class="resto-link" href="https://www.tripadvisor.es/Restaurant_Review-g1058784-d12825959-Reviews-Sidreria_Lindurrenborda-Lesaka_Navarra.html" target="_blank">📍 Tripadvisor</a>
+      </div>
+
+      <div class="resto-card">
+        <div class="resto-top">
+          <div class="resto-name">Restaurante Olaberri</div>
+          <span class="resto-rating">⭐ 4.6</span>
+        </div>
+        <div class="resto-type">Cocina vasca y navarra · €€–€€€</div>
+        <div class="resto-desc">El mejor valorado de Lesaka en Tripadvisor (4,6/5). Cocina tradicional de calidad, platos de carne y pescado bien ejecutados. Ambiente tranquilo y acogedor. Perfecto para la cena del viernes si queréis algo tranquilo después del viaje y la primera ruta.</div>
+        <div class="resto-tags">
+          <span class="resto-tag cuando">Cena viernes</span>
+          <span class="resto-tag">Mejor valorado</span>
+          <span class="resto-tag">Cocina vasca</span>
+        </div>
+        <a class="resto-link" href="https://www.tripadvisor.es/Restaurant_Review-g1058784-d10096611-Reviews-Restaurante_Olaberri-Lesaka_Navarra.html" target="_blank">📍 Tripadvisor</a>
+      </div>
+
+      <div class="resto-card">
+        <div class="resto-top">
+          <div class="resto-name">Restaurante Koxkonta</div>
+          <span class="resto-rating">⭐ 4.3</span>
+        </div>
+        <div class="resto-type">Asador · Cocina navarra · €€–€€€</div>
+        <div class="resto-desc">Gastronomía tradicional navarra en un caserón con encanto. Menús de 25€ a 54€, carta de 5–16€. Amplio comedor para 140 personas — sin problema con el grupo. Especialidades de temporada con producto de la huerta. El más conocido de la zona.</div>
+        <div class="resto-tags">
+          <span class="resto-tag cuando">Cena sábado</span>
+          <span class="resto-tag">Gran capacidad</span>
+          <span class="resto-tag">Menú variado</span>
+        </div>
+        <a class="resto-link" href="https://www.tripadvisor.es/Restaurant_Review-g1058784-d6934759-Reviews-Restaurante_Koxkonta-Lesaka_Navarra.html" target="_blank">📍 Tripadvisor</a>
+      </div>
+
+      <div class="resto-card">
+        <div class="resto-top">
+          <div class="resto-name">Bar Telebote</div>
+          <span class="resto-rating">⭐ 4.6</span>
+        </div>
+        <div class="resto-type">Bar · Cocina casera · €€</div>
+        <div class="resto-desc">Sorpresa del ranking: 4,6/5 con cocina casera de nivel y trato inmejorable. Ambiente local auténtico, perfecto para una cena informal después del sábado. "Buena cocina y trato inmejorable" y "muy buena gente" son las reseñas que más se repiten.</div>
+        <div class="resto-tags">
+          <span class="resto-tag cuando">Cena informal</span>
+          <span class="resto-tag">Local auténtico</span>
+          <span class="resto-tag">Precio razonable</span>
+        </div>
+        <a class="resto-link" href="https://www.tripadvisor.es/Restaurant_Review-g1058784-d10642069-Reviews-Bar_Telebote-Lesaka_Navarra.html" target="_blank">📍 Tripadvisor</a>
+      </div>
+
+    </div>
+
+    <!-- COMIDAS -->
+    <div class="resto-panel" id="resto-comida">
+
+      <div class="resto-card">
+        <div class="resto-top">
+          <div class="resto-name">Restaurante Kasino Lesaka</div>
+          <span class="resto-rating">⭐ 3.5</span>
+        </div>
+        <div class="resto-type">Mediterránea · Española · €€–€€€ · Centro del pueblo</div>
+        <div class="resto-desc">El restaurante del pueblo por excelencia — el sitio de los domingos de Lesaka. Con más de 250 opiniones es el más rodado. Menú del día, pocos platos pero bien ejecutados. Tortilla de patatas famosa — ganador del III Campeonato de España. Precio menú ~12–16€.</div>
+        <div class="resto-tags">
+          <span class="resto-tag cuando">Comida sábado o domingo</span>
+          <span class="resto-tag">Menú del día</span>
+          <span class="resto-tag">Tortilla estrella</span>
+          <span class="resto-tag">Centro pueblo</span>
+        </div>
+        <a class="resto-link" href="https://www.tripadvisor.es/Restaurant_Review-g1058784-d2015122-Reviews-Kasino_Lesaka-Lesaka_Navarra.html" target="_blank">📍 Tripadvisor</a>
+      </div>
+
+      <div class="resto-card">
+        <div class="resto-top">
+          <div class="resto-name">Bar Aialde</div>
+          <span class="resto-rating">⭐ 4.5</span>
+        </div>
+        <div class="resto-type">Cocina casera · €€</div>
+        <div class="resto-desc">Comida casera auténtica con muy buena relación calidad-precio. "Descubre la auténtica comida casera" es la descripción que más aparece. Servicio con sonrisa. Ideal para la comida del sábado tras la mañana de ruta, antes de la sesión de tarde en Bera.</div>
+        <div class="resto-tags">
+          <span class="resto-tag cuando">Comida sábado</span>
+          <span class="resto-tag">Cocina casera</span>
+          <span class="resto-tag">Buena relación Q/P</span>
+        </div>
+        <a class="resto-link" href="https://www.tripadvisor.es/Restaurant_Review-g1058784-d12369402-Reviews-Bar_Aialde-Lesaka_Navarra.html" target="_blank">📍 Tripadvisor</a>
+      </div>
+
+      <div class="resto-card">
+        <div class="resto-top">
+          <div class="resto-name">Restaurante Koxkonta</div>
+          <span class="resto-rating">⭐ 4.3</span>
+        </div>
+        <div class="resto-type">Asador · Cocina navarra · €€–€€€</div>
+        <div class="resto-desc">También funciona muy bien para comer al mediodía. Menú completo con opciones de carta. La misma calidad que en cena pero con más movimiento. Buena opción para la comida del domingo antes de volver a Madrid — capacidad sobrada para el grupo.</div>
+        <div class="resto-tags">
+          <span class="resto-tag cuando">Comida domingo</span>
+          <span class="resto-tag">Antes de Madrid</span>
+          <span class="resto-tag">Asador</span>
+        </div>
+        <a class="resto-link" href="https://www.tripadvisor.es/Restaurant_Review-g1058784-d6934759-Reviews-Restaurante_Koxkonta-Lesaka_Navarra.html" target="_blank">📍 Tripadvisor</a>
+      </div>
+
+      <div class="resto-card">
+        <div class="resto-top">
+          <div class="resto-name">Sidrería Lindurrenborda</div>
+          <span class="resto-rating">⭐ 4.3</span>
+        </div>
+        <div class="resto-type">Sidrería · Asador · €€</div>
+        <div class="resto-desc">Menú de sidrería clásico: tortilla, bacalao, txuleta y postre. Se puede adaptar — en temporada alta añaden entrantes. Las vistas son preciosas. Si preferís algo más especial que el Kasino para la comida del domingo, esta es la alternativa.</div>
+        <div class="resto-tags">
+          <span class="resto-tag cuando">Comida domingo especial</span>
+          <span class="resto-tag">Menú sidrería</span>
+          <span class="resto-tag">Vistas</span>
+        </div>
+        <a class="resto-link" href="https://www.tripadvisor.es/Restaurant_Review-g1058784-d12825959-Reviews-Sidreria_Lindurrenborda-Lesaka_Navarra.html" target="_blank">📍 Tripadvisor</a>
+      </div>
+
+    </div>
+
+    <!-- BARES / PINTXOS -->
+    <div class="resto-panel" id="resto-bar">
+
+      <div class="resto-card">
+        <div class="resto-top">
+          <div class="resto-name">Bar Telebote</div>
+          <span class="resto-rating">⭐ 4.6</span>
+        </div>
+        <div class="resto-type">Bar · Pintxos · Bocatas · €</div>
+        <div class="resto-desc">El mejor bar del pueblo según Tripadvisor. Pintxos y bocadillos de nivel con trato muy cercano. Para la tarde-noche cuando el grupo quiere algo informal antes o después de cenar en sitio más formal. Ambiente local cien por cien.</div>
+        <div class="resto-tags">
+          <span class="resto-tag cuando">Pre-cena / tarde</span>
+          <span class="resto-tag">Pintxos</span>
+          <span class="resto-tag">Ambiente local</span>
+        </div>
+        <a class="resto-link" href="https://www.tripadvisor.es/Restaurant_Review-g1058784-d10642069-Reviews-Bar_Telebote-Lesaka_Navarra.html" target="_blank">📍 Tripadvisor</a>
+      </div>
+
+      <div class="resto-card">
+        <div class="resto-top">
+          <div class="resto-name">Bar Zialdo</div>
+          <span class="resto-rating">⭐ 4.3</span>
+        </div>
+        <div class="resto-type">Bar · Pintxos · Bocadillos · €</div>
+        <div class="resto-desc">Pintxos y bocadillos bien hechos a precio económico. Ideal para reponer fuerzas rápido entre sesiones — después de la ruta del viernes y antes de ducharse, o para el desayuno del sábado y domingo antes de salir. Sin complicaciones.</div>
+        <div class="resto-tags">
+          <span class="resto-tag cuando">Desayuno / merienda</span>
+          <span class="resto-tag">Bocadillos</span>
+          <span class="resto-tag">Económico</span>
+        </div>
+        <a class="resto-link" href="https://www.tripadvisor.es/Restaurant_Review-g1058784-d18545387-Reviews-Bar_Zialdo-Lesaka_Navarra.html" target="_blank">📍 Tripadvisor</a>
+      </div>
+
+      <div class="resto-card">
+        <div class="resto-top">
+          <div class="resto-name">Bar Aialde</div>
+          <span class="resto-rating">⭐ 4.5</span>
+        </div>
+        <div class="resto-type">Bar · Bocadillos · Platos combinados · €</div>
+        <div class="resto-desc">Bocadillos grandes y muy buenos según las reseñas. "Excelente relación calidad-precio y servicio amable. La tortilla estaba buenísima." Para el desayuno del sábado antes de salir o como alternativa de bocata para llevar en ruta.</div>
+        <div class="resto-tags">
+          <span class="resto-tag cuando">Desayuno sábado</span>
+          <span class="resto-tag">Bocadillos grandes</span>
+          <span class="resto-tag">Tortilla estrella</span>
+        </div>
+        <a class="resto-link" href="https://www.tripadvisor.es/Restaurant_Review-g1058784-d12369402-Reviews-Bar_Aialde-Lesaka_Navarra.html" target="_blank">📍 Tripadvisor</a>
+      </div>
+
+      <div class="resto-card">
+        <div class="resto-top">
+          <div class="resto-name">Haizegua</div>
+          <span class="resto-rating">⭐ 3.8</span>
+        </div>
+        <div class="resto-type">Bar · Pub · €</div>
+        <div class="resto-desc">Bar pintoresco con buena comida y precio razonable. Bocadillos muy buenos según las reseñas. Para la noche cuando el grupo quiere seguir de ambiente en sitio tranquilo sin pretensiones. Ambiente relajado.</div>
+        <div class="resto-tags">
+          <span class="resto-tag cuando">Noche informal</span>
+          <span class="resto-tag">Ambiente</span>
+          <span class="resto-tag">Bocadillos</span>
+        </div>
+        <a class="resto-link" href="https://www.tripadvisor.es/Restaurant_Review-g1058784-d11799012-Reviews-Haizegua-Lesaka_Navarra.html" target="_blank">📍 Tripadvisor</a>
+      </div>
+
+    </div>
+
+    <div class="resto-note">
+      💡 <strong>Consejo práctico:</strong> Lesaka es un pueblo pequeño — los mejores sitios se llenan los fines de semana de verano. Llamad con antelación para reservar, especialmente Lindurrenborda y Olaberri. El Kasino y los bares suelen admitir sin reserva. La mayoría participan en el <strong>Sello Bizibide</strong> — preguntad al entrar si aceptan los bonos del polideportivo.
+    </div>
+  </div>
+
+
   <div class="info y">
     <strong>⚠️ Askati y Pipiflow sin señalizar en campo.</strong> Los GPX descargados los incluyen. El resto de bajadas están señalizadas pero siempre recomendable llevar el track cargado en el móvil o GPS.
   </div>
-  <div class="info g" style="margin-top:8px;">
-    <strong>🚵 Grupo unido todo el rato.</strong> Ebike regula asistencia para subir al ritmo de la bici muscular, o espera en el alto. En bajadas todos juntos. Tow rope en rampas muy empinadas si hace falta.
-  </div>
+
 
 </div>
 
@@ -658,6 +898,13 @@ function tog(h){
 function tog2(id){
   const b=document.getElementById(id+'-b'),a=document.getElementById(id+'-a'),o=b.classList.contains('open');
   b.classList.toggle('open',!o);a.classList.toggle('open',!o);
+}
+
+function togResto(id, btn) {
+  document.querySelectorAll('.resto-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.resto-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById('resto-' + id).classList.add('active');
+  btn.classList.add('active');
 }
 </script>
 </body>
